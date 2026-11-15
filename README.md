@@ -141,5 +141,3 @@ These are intentionally **not invented**. Until they're supplied, the site shows
 - [ ] **Legal review** of the privacy policy, terms and cookie policy for your jurisdiction (GDPR/Spain, LGPD/Brazil, Latin American and US state laws).
 - [ ] Optional: a 1200×630 share image as `app/opengraph-image.png` (then switch the Twitter card to `summary_large_image` in `lib/seo.ts`).
 - [ ] After deploying: submit `https://letrashub.com/sitemap.xml` in Google Search Console and check PageSpeed Insights on the live URL.
-#   l e t r a s - b o n i t a s  
- 

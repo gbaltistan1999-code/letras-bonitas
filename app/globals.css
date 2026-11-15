@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens. Brand: white + warm light gray + charcoal + one violet accent.
+ * Use them in markup as bg-surface, text-ink, border-line, text-accent, etc.
+ */
+@theme {
+  --color-page: #ffffff;
+  --color-surface: #f7f5f2;
+  --color-surface-2: #efebe6;
+  --color-line: #e4dfd8;
+  --color-ink: #1f1c1a;
+  --color-ink-soft: #4a4541;
+  --color-muted: #6b645e;
+  --color-accent: #6d28d9;
+  --color-accent-strong: #5b21b6;
+  --color-accent-soft: #f3eefe;
+  --color-success: #15803d;
+  --color-warn-bg: #fff7e6;
+  --color-warn-line: #f2d49b;
+  --color-warn-ink: #7a4a00;
+
+  /* System UI fonts first, then one math/symbol font per OS that covers the
+     Mathematical Alphanumeric Symbols block. Kept short on purpose: every
+     extra family is another per-glyph lookup during layout, and the OS
+     fallback already handles rarer scripts (CJK, Javanese…). */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Segoe UI Symbol",
+    "Cambria Math", "Noto Sans Math", "Apple Symbols", sans-serif;
+
+  --radius-card: 0.875rem;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+/* Long Unicode strings must never cause horizontal page scroll. */
+.fancy-output {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.6;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Prose styles for content sections (kept small on purpose). */
+.prose-lh p {
+  margin-top: 0.75rem;
+  line-height: 1.75;
+  color: var(--color-ink-soft);
+}
+.prose-lh ul,
+.prose-lh ol {
+  margin-top: 0.75rem;
+  padding-left: 1.25rem;
+  color: var(--color-ink-soft);
+  line-height: 1.7;
+}
+.prose-lh ul {
+  list-style: disc;
+}
+.prose-lh ol {
+  list-style: decimal;
+}
+.prose-lh li + li {
+  margin-top: 0.4rem;
+}
+.prose-lh a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-lh a:hover {
+  color: var(--color-accent-strong);
+}
+
+dialog::backdrop {
+  background: rgb(31 28 26 / 0.45);
+}
