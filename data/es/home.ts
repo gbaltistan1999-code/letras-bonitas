@@ -6,7 +6,7 @@ const home: HomeContent = {
     "Escribe tu texto y conviértelo al instante en letras bonitas: cursivas, góticas, pequeñas, tachadas y con símbolos. Copia con un toque y pega en Instagram, Free Fire, TikTok o WhatsApp.",
   h1: "Letras bonitas para copiar y pegar",
   intro:
-    "Escribe tu nombre, nick o frase y verás más de 50 tipos de letras diferentes al instante. Elige el que más te guste y cópialo con un solo toque.",
+    "Escribe tu nombre, nick o frase y verás más de 80 tipos de letras diferentes al instante. Elige el que más te guste y cópialo con un solo toque.",
   sample: "Letras Bonitas",
   sections: [
     {

@@ -45,6 +45,11 @@ export interface Dictionary {
     privacyNote: string;
     resultsLabel: string;
     previewHint: string;
+    decorationLabel: string;
+    decorationNone: string;
+    favorites: string;
+    addFavorite: string;
+    removeFavorite: string;
     categories: Record<CategoryId, string>;
   };
   styleNames: Record<StyleId, string>;

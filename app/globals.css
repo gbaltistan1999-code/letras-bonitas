@@ -47,8 +47,8 @@ body {
 
 /* Long Unicode strings must never cause horizontal page scroll. */
 .fancy-output {
-  overflow-wrap: anywhere;
-  word-break: break-word;
+  /* Wrap between words; only split a word if it can't fit on its own line. */
+  overflow-wrap: break-word;
   line-height: 1.6;
 }
 

@@ -100,3 +100,41 @@ export function wrapEach(text: string, left: string, right: string): string {
 export function frame(text: string, prefix: string, suffix: string): string {
   return text.trim() === "" ? text : `${prefix}${text}${suffix}`;
 }
+
+/**
+ * Small deterministic hash (FNV-1a). "Random-looking" styles (zalgo, emoji
+ * frames) use it instead of Math.random(), so the same text always gives the
+ * same result, and server and browser render identically.
+ */
+export function hash(text: string, salt = 0): number {
+  let h = 0x811c9dc5 ^ salt;
+  for (const ch of text) {
+    h ^= ch.codePointAt(0)!;
+    h = Math.imul(h, 0x01000193) >>> 0;
+  }
+  return h;
+}
+
+export function pick<T>(list: readonly T[], text: string, salt: number): T {
+  return list[hash(text, salt) % list.length];
+}
+
+const ZALGO_UP = ["̍", "̎", "̄", "̅", "̿", "̑", "̆", "̐", "͒", "͗", "͑", "̇", "̈", "̊"];
+const ZALGO_DOWN = ["̖", "̗", "̘", "̙", "̜", "̝", "̞", "̟", "̠", "̤", "̥", "̦", "̩", "̪"];
+
+/** Mild "glitch" text: one mark above and one below each visible character. */
+export function zalgo(text: string): string {
+  return toClusters(text)
+    .map((c, i) => (SPACE.test(c) ? c : c + ZALGO_UP[hash(c, i) % ZALGO_UP.length] + ZALGO_DOWN[hash(c, i + 7) % ZALGO_DOWN.length]))
+    .join("")
+    .normalize("NFC");
+}
+
+/** Apply a different map to each letter in turn (spaces don't advance the cycle). */
+export function cycleMaps(text: string, maps: readonly CharMap[]): string {
+  let n = 0;
+  return toClusters(text)
+    .map((c) => (SPACE.test(c) ? c : mapCluster(c, maps[n++ % maps.length])))
+    .join("")
+    .normalize("NFC");
+}

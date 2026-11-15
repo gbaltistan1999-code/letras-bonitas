@@ -15,7 +15,7 @@ const info: InfoPages = {
         blocks: [
           {
             type: "p",
-            text: "Reunimos num só lugar mais de 50 estilos de texto baseados em caracteres Unicode, explicados em português, espanhol e inglês. Cada estilo tem sua própria página com exemplos, instruções e limitações reais, para você saber o que esperar antes de colar no seu perfil.",
+            text: "Reunimos num só lugar mais de 80 estilos de texto baseados em caracteres Unicode, explicados em português, espanhol e inglês. Os principais estilos e plataformas têm página própria com exemplos, instruções e limitações reais, para você saber o que esperar antes de colar no seu perfil.",
           },
         ],
       },
@@ -191,7 +191,7 @@ const info: InfoPages = {
         blocks: [
           {
             type: "p",
-            text: "Usamos o armazenamento local (localStorage) do navegador para uma única coisa: lembrar sua escolha no aviso de cookies (categorias aceitas e data). Esse dado fica no seu aparelho, não chega até nós e pode ser apagado a qualquer momento nas configurações do navegador ou pelo botão «Retirar consentimento» em Configurar cookies.",
+            text: "Usamos o armazenamento local (localStorage) do navegador para duas coisas: lembrar sua escolha no aviso de cookies (categorias aceitas e data) e, só se você tocar no coração ♡ de algum estilo, guardar sua lista de estilos favoritos (apenas os nomes dos estilos, nunca o texto digitado). Esses dados ficam no seu aparelho, não chegam até nós e podem ser apagados a qualquer momento nas configurações do navegador ou pelo botão «Retirar consentimento» em Configurar cookies.",
           },
           {
             type: "p",
@@ -378,6 +378,7 @@ const info: InfoPages = {
             type: "ul",
             items: [
               "Nome: letrashub-consent. Tipo: armazenamento local (localStorage), não é um cookie HTTP. Categoria: necessário. Finalidade: lembrar sua escolha no aviso de cookies e a data. Duração: até você apagar ou retirar o consentimento.",
+              "Nome: letrashub-favorites. Tipo: armazenamento local. Categoria: funcional, solicitado por você. Finalidade: lembrar os estilos que você marca com ♡ (só os nomes). Só é criado quando você marca um favorito e é apagado ao remover todos ou apagar os dados do site.",
             ],
           },
           {

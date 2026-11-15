@@ -6,7 +6,7 @@ const home: HomeContent = {
     "Gerador de letras bonitas: digite seu texto e veja letras diferentes na hora — cursivas, góticas, pequenas, riscadas e com símbolos. Copie com um toque e cole no Free Fire, Instagram ou WhatsApp.",
   h1: "Letras bonitas e diferentes para copiar e colar",
   intro:
-    "Digite seu nome, nick ou frase e veja mais de 50 estilos de letras diferentes na hora. Escolha o seu favorito e copie com um toque.",
+    "Digite seu nome, nick ou frase e veja mais de 80 estilos de letras diferentes na hora. Escolha o seu favorito e copie com um toque.",
   sample: "Letras Bonitas",
   sections: [
     {

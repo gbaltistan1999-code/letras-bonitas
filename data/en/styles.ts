@@ -333,7 +333,7 @@ const pages: Record<StylePageKey, StylePageContent> = {
     intro:
       "A great gamertag is recognizable at a glance. Type your player name and try frames, symbols and special letters until you find the one.",
     sample: "ShadowHunter",
-    featured: ["javanese", "smile", "kanjiFrame", "starWaves", "lenticular", "cornerBrackets", "asian", "greekish", "smallCaps", "boldFraktur"],
+    featured: ["javanese", "smile", "kanjiFrame", "starWaves", "lenticular", "cornerBrackets", "asian", "greekish", "smallCaps", "boldFraktur", "gameCrown", "runic"],
     sections: [
       {
         heading: "What makes a nickname look good",
@@ -417,7 +417,7 @@ const pages: Record<StylePageKey, StylePageContent> = {
     intro:
       "Build a stylish Free Fire name: type it, pick a frame or symbol, and copy. We also cover what to check before you change your in-game name.",
     sample: "Headshot",
-    featured: ["javanese", "smile", "kanjiFrame", "starWaves", "cornerBrackets", "lenticular", "asian", "boldFraktur", "wings", "smallCaps"],
+    featured: ["javanese", "smile", "kanjiFrame", "starWaves", "cornerBrackets", "lenticular", "asian", "boldFraktur", "wings", "smallCaps", "gameSniper", "gameSkull"],
     sections: [
       {
         heading: "Popular styles in the Free Fire community",
@@ -501,7 +501,7 @@ const pages: Record<StylePageKey, StylePageContent> = {
     intro:
       "Give your Instagram profile some personality with fancy text in your name and bio. Type below, copy a style and paste it while editing your profile.",
     sample: "Travel & photography",
-    featured: ["script", "boldScript", "sansBold", "smallCaps", "spaced", "hearts", "starFrame", "doubleStruck"],
+    featured: ["script", "boldScript", "sansBold", "smallCaps", "spaced", "hearts", "starFrame", "doubleStruck", "cuteBow", "cuteBlossom"],
     sections: [
       {
         heading: "Where fancy text works on Instagram",
@@ -583,7 +583,7 @@ const pages: Record<StylePageKey, StylePageContent> = {
     intro:
       "Make your TikTok profile pop with fancy letters. Type your name or phrase, copy a style and paste it while editing your profile or writing comments.",
     sample: "Dance & comedy",
-    featured: ["sansBold", "smallCaps", "superscript", "script", "lightning", "starWaves", "bracketEach", "fullwidth"],
+    featured: ["sansBold", "smallCaps", "superscript", "script", "lightning", "starWaves", "bracketEach", "fullwidth", "crazyEmoji", "kaoSparkle"],
     sections: [
       {
         heading: "Which parts of TikTok accept fancy text",
@@ -663,7 +663,7 @@ const pages: Record<StylePageKey, StylePageContent> = {
     intro:
       "Customize your WhatsApp name, about and messages with fancy text, and learn the formatting WhatsApp already has built in, which is sometimes the better option.",
     sample: "Happy birthday",
-    featured: ["script", "bold", "italic", "strike", "monospace", "circled", "hearts", "upsideDown"],
+    featured: ["script", "bold", "italic", "strike", "monospace", "circled", "hearts", "upsideDown", "kaoHug", "kaoFlip"],
     sections: [
       {
         heading: "First: WhatsApp's built-in formatting",
@@ -741,7 +741,7 @@ const pages: Record<StylePageKey, StylePageContent> = {
     intro:
       "Customize your Discord display name and server nicknames. Type your name, pick a style and copy it. Below we explain which fields accept fancy text.",
     sample: "NightOwl",
-    featured: ["fraktur", "boldScript", "monospace", "smallCaps", "doubleStruck", "negativeSquared", "cornerBrackets", "asian"],
+    featured: ["fraktur", "boldScript", "monospace", "smallCaps", "doubleStruck", "negativeSquared", "cornerBrackets", "asian", "glitch", "kaoShrug"],
     sections: [
       {
         heading: "Username vs. display name vs. nickname",

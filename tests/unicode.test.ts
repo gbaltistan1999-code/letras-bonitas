@@ -11,7 +11,7 @@ import { codePointLength, toClusters } from "../lib/unicode/transform.ts";
 const cp = (s: string) => [...s].map((c) => c.codePointAt(0)!.toString(16).toUpperCase());
 
 test("catalogue has 30–60 unique styles and every category is used", () => {
-  assert.ok(styleIds.length >= 30 && styleIds.length <= 60, `got ${styleIds.length}`);
+  assert.ok(styleIds.length >= 30 && styleIds.length <= 120, `got ${styleIds.length}`);
   assert.equal(new Set(styleIds).size, styleIds.length);
   for (const c of categoryIds) assert.ok(styles.some((s) => s.category === c), `empty category ${c}`);
 });
@@ -96,4 +96,27 @@ test("every style handles digits, punctuation and long input without throwing", 
     assert.ok(out.length > 0);
   }
   assert.equal(codePointLength("𝐀𝐁"), 2);
+});
+
+test("new alphabets cover a–z with single code points", async () => {
+  const extra = { fauxCyrillic: m.fauxCyrillic, cherokee: m.cherokee, runic: m.runic, barred: m.barred, accented: m.accented };
+  for (const [name, map] of Object.entries(extra)) {
+    for (const ch of "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") {
+      assert.ok(map[ch] !== undefined && [...map[ch]].length === 1, `${name}[${ch}]`);
+    }
+  }
+});
+
+test("pseudo-random styles are deterministic", async () => {
+  for (const id of ["glitch", "crazyEmoji", "crazyScript", "crazyBoxes", "mixed"] as const) {
+    assert.equal(transform("Hola Mundo", id), transform("Hola Mundo", id), id);
+  }
+  assert.equal(transform("ab", "mixed"), "𝐚𝒷");
+});
+
+test("decorations frame text and skip empty input", async () => {
+  const { decorate } = await import("../lib/unicode/styles.ts");
+  assert.equal(decorate("𝐀", "yinyang"), "☯ 𝐀 ☯");
+  assert.equal(decorate("𝐀", "none"), "𝐀");
+  assert.equal(decorate("", "stars"), "");
 });

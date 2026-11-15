@@ -15,7 +15,7 @@ const info: InfoPages = {
         blocks: [
           {
             type: "p",
-            text: "We bring together more than 50 Unicode text styles, explained in Spanish, Portuguese and English. Each style has its own page with examples, instructions and real limitations, so you know what to expect before pasting into your profile.",
+            text: "We bring together more than 80 Unicode text styles, explained in Spanish, Portuguese and English. The main styles and platforms each have their own page with examples, instructions and real limitations, so you know what to expect before pasting into your profile.",
           },
         ],
       },
@@ -175,7 +175,7 @@ const info: InfoPages = {
         blocks: [
           {
             type: "p",
-            text: "We use your browser's local storage (localStorage) for one thing only: remembering your choice in the cookie notice (accepted categories and date). It stays on your device, we never receive it, and you can delete it anytime in your browser settings or with the Withdraw consent button under Cookie settings.",
+            text: "We use your browser's local storage (localStorage) for two things: remembering your choice in the cookie notice (accepted categories and date) and, only if you tap a style's heart ♡, keeping your list of favorite styles (style names only, never the text you type). This data stays on your device, we never receive it, and you can delete it anytime in your browser settings or with the Withdraw consent button under Cookie settings.",
           },
           {
             type: "p",
@@ -361,6 +361,7 @@ const info: InfoPages = {
             type: "ul",
             items: [
               "Name: letrashub-consent. Type: local storage (localStorage), not an HTTP cookie. Category: necessary. Purpose: remember your cookie-notice choice and its date. Duration: until you delete it or withdraw consent.",
+              "Name: letrashub-favorites. Type: local storage. Category: functional, requested by you. Purpose: remember the styles you mark with ♡ (names only). Created only when you mark a favorite; removed when you unmark them all or clear the site's data.",
             ],
           },
           {

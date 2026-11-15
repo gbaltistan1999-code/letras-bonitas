@@ -1,14 +1,15 @@
 "use client";
 
-import { useCallback, useDeferredValue, useEffect, useId, useMemo, useRef, useState } from "react";
+import { useCallback, useDeferredValue, useEffect, useId, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { Lock, X } from "lucide-react";
-import { categoryIds, styles, styleById, type CategoryId, type StyleId } from "@/lib/unicode/styles";
+import { categoryIds, decorate, decorations, styles, styleById, type CategoryId, type DecorationId, type StyleId } from "@/lib/unicode/styles";
+import { getFavorites, getServerFavorites, subscribeFavorites, toggleFavorite } from "@/lib/favorites";
 import { codePointLength } from "@/lib/unicode/transform";
 import { copyToClipboard, selectElementText } from "@/lib/clipboard";
 import type { Dictionary } from "@/types/dictionary";
 import { StyleCard } from "./StyleCard";
 
-type Filter = "recommended" | "all" | CategoryId;
+type Filter = "favorites" | "recommended" | "all" | CategoryId;
 
 export interface GeneratorProps {
   strings: Dictionary["generator"];
@@ -40,6 +41,11 @@ export function Generator({ strings, styleNames, sample, featured, initialCatego
   const [copiedId, setCopiedId] = useState<StyleId | null>(null);
   const [announcement, setAnnouncement] = useState("");
   const [manualHint, setManualHint] = useState(false);
+  const [decoration, setDecoration] = useState<DecorationId>("none");
+  const decorationId = useId();
+  const favorites = useSyncExternalStore(subscribeFavorites, getFavorites, getServerFavorites);
+  // If the last favorite is removed while that tab is open, fall back to "All".
+  const activeFilter: Filter = filter === "favorites" && favorites.length === 0 ? "all" : filter;
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const flip = useRef(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -55,16 +61,20 @@ export function Generator({ strings, styleNames, sample, featured, initialCatego
 
   const visible = useMemo(() => {
     let list;
-    if (filter === "recommended") list = (featured ?? []).map(styleById);
-    else if (filter === "all") list = styles;
-    else list = styles.filter((s) => s.category === filter);
+    if (activeFilter === "favorites") list = favorites.map(styleById);
+    else if (activeFilter === "recommended") list = (featured ?? []).map(styleById);
+    else if (activeFilter === "all") list = styles;
+    else list = styles.filter((s) => s.category === activeFilter);
     return list;
-  }, [filter, featured]);
+  }, [activeFilter, featured, favorites]);
 
-  const collapsible = filter === "all" && visible.length > COLLAPSED_COUNT;
+  const collapsible = activeFilter === "all" && visible.length > COLLAPSED_COUNT;
   const shown = collapsible && !expanded ? visible.slice(0, COLLAPSED_COUNT) : visible;
 
-  const outputs = useMemo(() => shown.map((s) => ({ id: s.id, output: s.apply(source) })), [shown, source]);
+  const outputs = useMemo(
+    () => shown.map((s) => ({ id: s.id, output: decorate(s.apply(source), decoration) })),
+    [shown, source, decoration],
+  );
 
   const onChange = (value: string) => {
     if (codePointLength(value) > maxLength) {
@@ -97,12 +107,17 @@ export function Generator({ strings, styleNames, sample, featured, initialCatego
   );
 
   const chips: { id: Filter; label: string }[] = [
+    ...(favorites.length ? [{ id: "favorites" as const, label: `♥ ${strings.favorites} (${favorites.length})` }] : []),
     ...(featured?.length ? [{ id: "recommended" as const, label: strings.recommended }] : []),
     { id: "all", label: strings.all },
     ...categoryIds.map((c) => ({ id: c, label: strings.categories[c] })),
   ];
 
   const count = codePointLength(text);
+  const cardLabels = useMemo(
+    () => ({ copy: strings.copy, copied: strings.copied, addFavorite: strings.addFavorite, removeFavorite: strings.removeFavorite }),
+    [strings],
+  );
 
   return (
     <div className="rounded-2xl border border-line bg-surface p-3 shadow-sm sm:p-5">
@@ -159,11 +174,30 @@ export function Generator({ strings, styleNames, sample, featured, initialCatego
         ) : null}
       </div>
 
+      {/* Decoration picker: wraps every result in the chosen symbols */}
+      <div className="mt-4 flex items-center gap-2">
+        <label htmlFor={decorationId} className="text-sm font-semibold text-ink">
+          {strings.decorationLabel}
+        </label>
+        <select
+          id={decorationId}
+          value={decoration}
+          onChange={(e) => setDecoration(e.target.value as DecorationId)}
+          className="h-10 min-w-0 flex-1 rounded-xl border border-line bg-page px-3 text-sm text-ink focus:border-accent focus:outline-none sm:max-w-xs"
+        >
+          {decorations.map((d) => (
+            <option key={d.id} value={d.id}>
+              {d.id === "none" ? strings.decorationNone : d.label}
+            </option>
+          ))}
+        </select>
+      </div>
+
       {/* Category chips */}
-      <div role="group" aria-label={strings.filterLabel} className="-mx-3 mt-4 overflow-x-auto px-3 pb-1 sm:-mx-5 sm:px-5">
+      <div role="group" aria-label={strings.filterLabel} className="-mx-3 mt-3 overflow-x-auto px-3 pb-1 sm:-mx-5 sm:px-5">
         <div className="flex w-max gap-2">
           {chips.map((chip) => {
-            const active = filter === chip.id;
+            const active = activeFilter === chip.id;
             return (
               <button
                 key={chip.id}
@@ -189,7 +223,7 @@ export function Generator({ strings, styleNames, sample, featured, initialCatego
       {/* Results */}
       <h2 className="sr-only">{strings.resultsLabel}</h2>
       {isPreview ? <p className="mt-4 text-sm text-muted">{strings.previewHint}</p> : null}
-      <ul className="mt-3 grid gap-2.5 lg:grid-cols-2" aria-live="off">
+      <ul className="mt-3 grid grid-cols-1 gap-2.5 lg:grid-cols-2" aria-live="off">
         {outputs.map(({ id, output }) => (
           <StyleCard
             key={id}
@@ -197,8 +231,9 @@ export function Generator({ strings, styleNames, sample, featured, initialCatego
             name={styleNames[id]}
             output={output}
             copied={copiedId === id}
-            copyLabel={strings.copy}
-            copiedLabel={strings.copied}
+            favorite={favorites.includes(id)}
+            labels={cardLabels}
+            onToggleFavorite={toggleFavorite}
             onCopy={onCopy}
           />
         ))}

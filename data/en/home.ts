@@ -3,10 +3,10 @@ import type { HomeContent } from "@/types/content";
 const home: HomeContent = {
   metaTitle: "Fancy Text Generator: Cool Fonts to Copy and Paste | LetrasHub",
   metaDescription:
-    "Free fancy text generator: type once and get 50+ cool fonts to copy and paste — cursive, gothic, small, strikethrough and symbol styles for Instagram, Discord, TikTok and games.",
+    "Free fancy text generator: type once and get 80+ cool fonts to copy and paste — cursive, gothic, small, strikethrough and symbol styles for Instagram, Discord, TikTok and games.",
   h1: "Fancy text generator",
   intro:
-    "Type your name, nickname or message and instantly see it in more than 50 fancy letter styles. Tap Copy on the one you like and paste it anywhere.",
+    "Type your name, nickname or message and instantly see it in more than 80 fancy letter styles. Tap Copy on the one you like and paste it anywhere.",
   sample: "Fancy Text",
   sections: [
     {

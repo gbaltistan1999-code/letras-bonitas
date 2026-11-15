@@ -3,7 +3,7 @@
 Multilingual fancy-letters generator ("letras bonitas") built with Next.js 16 (App Router), TypeScript and Tailwind CSS 4.
 
 - Spanish (default) at `/`, Brazilian Portuguese at `/pt`, English at `/en`
-- 51 Unicode text styles in 12 categories, converted live in the browser
+- 86 Unicode text styles in 16 categories (incl. kaomoji, cute, crazy and gaming frames), a decoration picker and favorites, all converted live in the browser
 - 10 style/platform pages + 7 trust/legal pages per language (54 static pages)
 - Cookie banner + settings panel, localized 404, sitemap with hreflang, robots.txt, JSON-LD
 

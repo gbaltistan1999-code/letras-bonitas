@@ -346,7 +346,7 @@ const pages: Record<StylePageKey, StylePageContent> = {
     intro:
       "Un buen nick se reconoce de un vistazo. Escribe tu nombre de jugador y prueba marcos, símbolos y letras especiales hasta dar con el tuyo.",
     sample: "ShadowKing",
-    featured: ["javanese", "smile", "kanjiFrame", "starWaves", "lenticular", "cornerBrackets", "asian", "greekish", "smallCaps", "boldFraktur"],
+    featured: ["javanese", "smile", "kanjiFrame", "starWaves", "lenticular", "cornerBrackets", "asian", "greekish", "smallCaps", "boldFraktur", "gameCrown", "runic"],
     sections: [
       {
         heading: "Qué hace que un nick se vea bien",
@@ -430,7 +430,7 @@ const pages: Record<StylePageKey, StylePageContent> = {
     intro:
       "Crea un nick con estilo para Free Fire: escribe tu nombre, elige un marco o símbolo y cópialo. Te contamos también qué revisar antes de cambiar el nombre en el juego.",
     sample: "ProPlayer",
-    featured: ["javanese", "smile", "kanjiFrame", "starWaves", "cornerBrackets", "lenticular", "asian", "boldFraktur", "wings", "smallCaps"],
+    featured: ["javanese", "smile", "kanjiFrame", "starWaves", "cornerBrackets", "lenticular", "asian", "boldFraktur", "wings", "smallCaps", "gameSniper", "gameSkull"],
     sections: [
       {
         heading: "Los estilos más usados en Free Fire",
@@ -514,7 +514,7 @@ const pages: Record<StylePageKey, StylePageContent> = {
     intro:
       "Dale personalidad a tu perfil de Instagram con letras diferentes en el nombre y la biografía. Escribe tu texto, copia el estilo y pégalo al editar tu perfil.",
     sample: "Fotografía y viajes",
-    featured: ["script", "boldScript", "sansBold", "smallCaps", "spaced", "hearts", "starFrame", "doubleStruck"],
+    featured: ["script", "boldScript", "sansBold", "smallCaps", "spaced", "hearts", "starFrame", "doubleStruck", "cuteBow", "cuteBlossom"],
     sections: [
       {
         heading: "Dónde puedes usar letras bonitas en Instagram",
@@ -599,7 +599,7 @@ const pages: Record<StylePageKey, StylePageContent> = {
     intro:
       "Haz que tu perfil de TikTok destaque con letras diferentes. Escribe tu nombre o frase, copia el estilo y pégalo al editar el perfil o en tus comentarios.",
     sample: "Bailes y humor",
-    featured: ["sansBold", "smallCaps", "superscript", "script", "lightning", "starWaves", "bracketEach", "fullwidth"],
+    featured: ["sansBold", "smallCaps", "superscript", "script", "lightning", "starWaves", "bracketEach", "fullwidth", "crazyEmoji", "kaoSparkle"],
     sections: [
       {
         heading: "Qué partes de TikTok aceptan letras con estilo",
@@ -682,7 +682,7 @@ const pages: Record<StylePageKey, StylePageContent> = {
     intro:
       "Personaliza tu nombre, tu info y tus mensajes de WhatsApp con letras diferentes. Además te explicamos el formato que WhatsApp ya trae, que a veces es la mejor opción.",
     sample: "Feliz cumpleaños",
-    featured: ["script", "bold", "italic", "strike", "monospace", "circled", "hearts", "upsideDown"],
+    featured: ["script", "bold", "italic", "strike", "monospace", "circled", "hearts", "upsideDown", "kaoHug", "kaoFlip"],
     sections: [
       {
         heading: "Primero: el formato propio de WhatsApp",
@@ -781,7 +781,7 @@ const pages: Record<StylePageKey, StylePageContent> = {
     intro:
       "Personaliza tu nombre visible y tus apodos de servidor en Discord. Escribe tu nombre, elige un estilo y cópialo; abajo explicamos qué campos lo aceptan.",
     sample: "NightOwl",
-    featured: ["fraktur", "boldScript", "monospace", "smallCaps", "doubleStruck", "negativeSquared", "cornerBrackets", "asian"],
+    featured: ["fraktur", "boldScript", "monospace", "smallCaps", "doubleStruck", "negativeSquared", "cornerBrackets", "asian", "glitch", "kaoShrug"],
     sections: [
       {
         heading: "Nombre de usuario, nombre visible y apodo",
