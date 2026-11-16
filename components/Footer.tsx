@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import type { Locale } from "@/lib/site-config";
+import { siteConfig, type Locale } from "@/lib/site-config";
 import { pathFor, stylePageKeys } from "@/lib/routes";
 import { getDictionary, pageLabel } from "@/lib/i18n";
 import { CookieSettingsButton } from "./cookies/CookieSettingsButton";
@@ -19,8 +20,8 @@ export function Footer({ locale }: { locale: Locale }) {
     <footer className="mt-20 border-t border-line bg-surface">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1.4fr_1fr_1fr_1fr]">
         <div>
-          <Link href={pathFor(locale, "home")} className="text-lg font-bold tracking-tight text-ink">
-            Letras<span className="text-accent">Hub</span>
+          <Link href={pathFor(locale, "home")} className="inline-flex" translate="no">
+            <Image src="/logo.png" alt={`${siteConfig.name} — ${dict.common.home}`} width={623} height={160} className="h-9 w-auto" />
           </Link>
           <p className="mt-3 max-w-xs text-sm leading-6 text-muted">{dict.footer.tagline}</p>
         </div>
