@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
+import Image from "next/image";
 import { ChevronDown, Menu, X } from "lucide-react";
 import type { Dictionary } from "@/types/dictionary";
 import { LanguageSwitcher, useAlternateLinks } from "./LanguageSwitcher";
@@ -64,9 +65,15 @@ export function Header({ homeHref, labels, letterStyles, platforms, links }: Hea
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-page">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4">
-        <Link href={homeHref} className="text-xl font-bold tracking-tight text-ink">
-          Letras<span className="text-accent">Hub</span>
-          <span className="sr-only"> — {labels.home}</span>
+        <Link href={homeHref} className="flex shrink-0 items-center">
+          <Image
+            src="/logo.png"
+            alt={`LetrasHub — ${labels.home}`}
+            width={623}
+            height={160}
+            priority
+            className="h-9 w-auto"
+          />
         </Link>
 
         {/* Desktop navigation */}
@@ -132,6 +139,7 @@ export function Header({ homeHref, labels, letterStyles, platforms, links }: Hea
       {/* Mobile panel */}
       <div id={mobileId} hidden={!menuOpen} className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-line bg-page md:hidden">
         <nav aria-label={labels.mainNav} className="mx-auto max-w-6xl space-y-5 px-4 py-5">
+          <MobileLanguages label={labels.language} />
           <ul className="space-y-1">
             {[{ href: homeHref, label: labels.home }, ...links].map((l) => (
               <li key={l.href}>
@@ -147,7 +155,6 @@ export function Header({ homeHref, labels, letterStyles, platforms, links }: Hea
           </ul>
           <MenuGroup title={labels.letterStyles} items={letterStyles} isActive={isActive} large />
           <MenuGroup title={labels.platforms} items={platforms} isActive={isActive} large />
-          <MobileLanguages label={labels.language} />
         </nav>
       </div>
     </header>
@@ -192,18 +199,18 @@ function MobileLanguages({ label }: { label: string }) {
   return (
     <div>
       <p className="px-3 text-xs font-semibold uppercase tracking-wide text-muted">{label}</p>
-      <ul className="mt-2 flex gap-2 px-1">
+      <ul className="mt-2 flex gap-1 rounded-full border border-line bg-surface p-1">
         {links.map((l) => {
           const meta = siteConfig.localeMeta[l.locale];
           return (
-            <li key={l.locale}>
+            <li key={l.locale} className="flex-1">
               <Link
                 href={l.href}
                 hrefLang={meta.hreflang}
                 lang={meta.htmlLang}
                 aria-current={l.current ? "true" : undefined}
-                className={`inline-flex h-11 items-center rounded-xl border px-4 text-sm font-medium ${
-                  l.current ? "border-accent bg-accent-soft text-accent" : "border-line text-ink-soft"
+                className={`flex h-10 items-center justify-center rounded-full text-sm font-medium transition-colors ${
+                  l.current ? "bg-accent text-white shadow-sm" : "text-ink-soft hover:bg-page hover:text-ink"
                 }`}
               >
                 {meta.label}
