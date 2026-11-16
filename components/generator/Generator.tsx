@@ -120,7 +120,7 @@ export function Generator({ strings, styleNames, sample, featured, initialCatego
   );
 
   return (
-    <div className="rounded-2xl border border-line bg-surface p-3 shadow-sm sm:p-5">
+    <div className="rounded-2xl border border-white bg-white/80 p-3 shadow-lg shadow-purple-100/60 backdrop-blur-md sm:p-5">
       {/* Input */}
       <label htmlFor={inputId} className="mb-2 block text-sm font-semibold text-ink">
         {strings.inputLabel}
@@ -209,7 +209,7 @@ export function Generator({ strings, styleNames, sample, featured, initialCatego
                 }}
                 className={`h-10 whitespace-nowrap rounded-full border px-4 text-sm font-medium transition-colors ${
                   active
-                    ? "border-accent bg-accent text-white"
+                    ? "border-transparent bg-brand text-white shadow-sm shadow-purple-200"
                     : "border-line bg-page text-ink-soft hover:border-accent hover:text-accent"
                 }`}
               >

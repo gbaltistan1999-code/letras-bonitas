@@ -19,7 +19,7 @@ export function NotFoundView({ locale }: { locale: Locale }) {
       <p className="mt-4 leading-7 text-ink-soft">{dict.notFound.text}</p>
       <Link
         href={pathFor(locale, "home")}
-        className="mt-8 inline-flex h-12 items-center rounded-xl bg-accent px-6 font-semibold text-white hover:bg-accent-strong"
+        className="mt-8 inline-flex h-12 items-center rounded-xl bg-brand px-6 font-semibold text-white hover:opacity-90"
       >
         {dict.notFound.home}
       </Link>

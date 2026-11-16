@@ -145,7 +145,7 @@ export function CookieSettingsDialog({
           <button
             type="button"
             onClick={() => save(draft)}
-            className="h-11 rounded-xl bg-ink px-3 text-sm font-semibold text-white hover:bg-ink-soft"
+            className="h-11 rounded-xl bg-brand px-3 text-sm font-semibold text-white hover:opacity-90"
           >
             {strings.save}
           </button>

@@ -55,7 +55,7 @@ export function ContactForm({ email, strings }: { email: string | null; strings:
         </div>
         <button
           type="submit"
-          className="inline-flex h-12 items-center gap-2 rounded-xl bg-accent px-5 font-semibold text-white hover:bg-accent-strong disabled:cursor-not-allowed disabled:bg-muted"
+          className="inline-flex h-12 items-center gap-2 rounded-xl bg-brand px-5 font-semibold text-white shadow-lg shadow-purple-200 hover:opacity-90 disabled:cursor-not-allowed disabled:bg-none disabled:bg-muted disabled:shadow-none"
         >
           <Mail aria-hidden="true" className="size-4" />
           {strings.submit}

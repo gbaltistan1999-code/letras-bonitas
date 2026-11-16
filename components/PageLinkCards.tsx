@@ -17,7 +17,7 @@ export function PageLinkCards({ cards }: { cards: LinkCard[] }) {
         <li key={c.href}>
           <Link
             href={c.href}
-            className="group flex h-full flex-col rounded-[var(--radius-card)] border border-line bg-page p-4 transition-colors hover:border-accent hover:bg-accent-soft/40"
+            className="group flex h-full flex-col rounded-[var(--radius-card)] border border-line bg-white/80 p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-purple-200 hover:shadow-md"
           >
             {c.preview ? (
               <span aria-hidden="true" className="fancy-output mb-1 text-lg text-accent">

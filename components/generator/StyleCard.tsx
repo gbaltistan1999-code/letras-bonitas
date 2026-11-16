@@ -43,7 +43,7 @@ export const StyleCard = memo(function StyleCard({ id, name, output, copied, fav
         onClick={() => onCopy(id, output, name, outRef.current)}
         aria-label={`${copied ? labels.copied : labels.copy}: ${name}`}
         className={`inline-flex h-11 min-w-[5.75rem] shrink-0 items-center justify-center gap-1.5 rounded-xl px-3 text-sm font-semibold transition-colors ${
-          copied ? "bg-success text-white" : "bg-accent text-white hover:bg-accent-strong"
+          copied ? "bg-success text-white" : "bg-brand text-white hover:opacity-90"
         }`}
       >
         {copied ? <Check aria-hidden="true" className="size-4" /> : <Copy aria-hidden="true" className="size-4" />}

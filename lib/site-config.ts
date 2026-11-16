@@ -55,7 +55,7 @@ export const siteConfig = {
     en: { hreflang: "en", htmlLang: "en", ogLocale: "en_US", label: "English", short: "EN" },
   } satisfies Record<Locale, { hreflang: string; htmlLang: string; ogLocale: string; label: string; short: string }>,
 
-  themeColor: "#6d28d9",
+  themeColor: "#9333ea",
 } as const;
 
 export function isLocale(value: string): value is Locale {

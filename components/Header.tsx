@@ -63,7 +63,7 @@ export function Header({ homeHref, labels, letterStyles, platforms, links }: Hea
 
   // z-50: an opened mobile menu must cover the cookie banner (z-40).
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-page">
+    <header className="sticky top-0 z-50 border-b border-purple-100/80 bg-white/85 shadow-sm shadow-purple-900/[0.02] backdrop-blur-lg">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4">
         <Link href={homeHref} className="flex shrink-0 items-center">
           <Image
@@ -210,7 +210,7 @@ function MobileLanguages({ label }: { label: string }) {
                 lang={meta.htmlLang}
                 aria-current={l.current ? "true" : undefined}
                 className={`flex h-10 items-center justify-center rounded-full text-sm font-medium transition-colors ${
-                  l.current ? "bg-accent text-white shadow-sm" : "text-ink-soft hover:bg-page hover:text-ink"
+                  l.current ? "bg-brand text-white shadow-sm shadow-purple-200" : "text-ink-soft hover:bg-page hover:text-ink"
                 }`}
               >
                 {meta.label}

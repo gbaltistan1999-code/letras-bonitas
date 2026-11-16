@@ -35,7 +35,7 @@ export function InfoPageView({ locale, pageKey }: { locale: Locale; pageKey: Inf
     <article className="mx-auto max-w-3xl px-4 pt-6 sm:pt-8">
       <JsonLd data={graph(...schemaNodes)} />
       <Breadcrumbs items={crumbs} label={dict.common.breadcrumbLabel} />
-      <h1 className="mt-4 text-3xl font-bold tracking-tight text-ink sm:text-4xl">{page.h1}</h1>
+      <h1 className="text-brand mt-4 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">{page.h1}</h1>
       {page.showUpdated ? (
         <p className="mt-2 text-sm text-muted">
           {dict.common.lastUpdated}: <time dateTime={siteConfig.legalLastUpdated}>{updated}</time>

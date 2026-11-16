@@ -50,7 +50,7 @@ export function CookieBanner({
           <button
             type="button"
             onClick={() => saveConsent({ analytics: true, marketing: true })}
-            className={`${choice} bg-ink text-white hover:bg-ink-soft`}
+            className={`${choice} bg-brand text-white hover:opacity-90`}
           >
             {strings.acceptAll}
           </button>

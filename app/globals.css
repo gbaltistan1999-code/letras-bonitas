@@ -1,20 +1,21 @@
 @import "tailwindcss";
 
 /*
- * Design tokens. Brand: white + warm light gray + charcoal + one violet accent.
+ * Design tokens. Brand: soft purple-pink tinted page, white cards, gray text,
+ * purple (#9333ea) to pink (#db2777) gradient for buttons and headlines.
  * Use them in markup as bg-surface, text-ink, border-line, text-accent, etc.
  */
 @theme {
   --color-page: #ffffff;
-  --color-surface: #f7f5f2;
-  --color-surface-2: #efebe6;
-  --color-line: #e4dfd8;
-  --color-ink: #1f1c1a;
-  --color-ink-soft: #4a4541;
-  --color-muted: #6b645e;
-  --color-accent: #6d28d9;
-  --color-accent-strong: #5b21b6;
-  --color-accent-soft: #f3eefe;
+  --color-surface: #faf7fd;
+  --color-surface-2: #f3edf9;
+  --color-line: #ede4f7;
+  --color-ink: #1f2937;
+  --color-ink-soft: #4b5563;
+  --color-muted: #6b7280;
+  --color-accent: #9333ea;
+  --color-accent-strong: #7e22ce;
+  --color-accent-soft: #faf5ff;
   --color-success: #15803d;
   --color-warn-bg: #fff7e6;
   --color-warn-line: #f2d49b;
@@ -40,7 +41,10 @@ html {
 }
 
 body {
-  background: var(--color-page);
+  min-height: 100vh;
+  background-color: #fbf7fd;
+  background-image: linear-gradient(135deg, #faf5ff 0%, #fdf2f8 50%, #f5f3ff 100%);
+  background-attachment: fixed;
   color: var(--color-ink);
   font-family: var(--font-sans);
 }
@@ -102,4 +106,16 @@ body {
 
 dialog::backdrop {
   background: rgb(31 28 26 / 0.45);
+}
+
+/* Brand gradient: purple-600 -> pink-600. bg-brand for buttons/chips,
+   text-brand for gradient headline text. */
+@utility bg-brand {
+  background-image: linear-gradient(to right, #9333ea, #db2777);
+}
+@utility text-brand {
+  background-image: linear-gradient(to right, #9333ea, #db2777);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

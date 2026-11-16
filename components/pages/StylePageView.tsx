@@ -34,8 +34,8 @@ export function StylePageView({ locale, pageKey }: { locale: Locale; pageKey: St
       />
       <section className="mx-auto max-w-4xl px-4 pt-6 sm:pt-8">
         <Breadcrumbs items={crumbs} label={dict.common.breadcrumbLabel} />
-        <h1 className="mt-4 text-3xl font-bold tracking-tight text-ink sm:text-4xl">{page.h1}</h1>
-        <p className="mt-3 max-w-2xl text-base leading-7 text-ink-soft sm:text-lg">{page.intro}</p>
+        <h1 className="text-brand mt-4 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">{page.h1}</h1>
+        <p className="mt-3 max-w-2xl text-base leading-7 text-gray-700 sm:text-lg">{page.intro}</p>
         <div className="mt-6">
           <Generator
             strings={dict.generator}

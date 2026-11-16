@@ -48,7 +48,7 @@ export function LanguageSwitcher({ label, variant = "inline" }: { label: string;
           full
           className={`whitespace-nowrap rounded-full px-3 py-1 text-center text-sm font-medium transition-colors ${
             l.current
-              ? "bg-accent text-white shadow-sm"
+              ? "bg-brand text-white shadow-sm shadow-purple-200"
               : "text-ink-soft hover:bg-page hover:text-ink"
           }`}
         />
