@@ -28,6 +28,9 @@ export const siteConfig = {
     } as Record<Locale, string | null>,
   },
 
+  /** Google Search Console ownership token (rendered as <meta name="google-site-verification">). */
+  googleSiteVerification: "OKmghb1sDWNFwJRHUZxoeiLoAgCKWPGZ1EW1HtkKTyw",
+
   /** Date shown on legal pages as "last updated" (ISO yyyy-mm-dd). */
   legalLastUpdated: "2026-11-16",
 

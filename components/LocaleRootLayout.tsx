@@ -27,6 +27,7 @@ export function rootMetadata(locale: Locale): Metadata {
     title: getHome(locale).metaTitle,
     description: getHome(locale).metaDescription,
     formatDetection: { telephone: false, email: false, address: false },
+    verification: { google: siteConfig.googleSiteVerification },
   };
 }
 
