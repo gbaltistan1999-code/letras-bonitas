@@ -52,8 +52,8 @@ export function HomeView({ locale }: { locale: Locale }) {
         )}
       />
       <section className="mx-auto max-w-4xl px-4 pt-8 sm:pt-12">
-        <h1 className="text-brand text-center text-3xl font-bold leading-tight tracking-tight sm:text-5xl">{home.h1}</h1>
-        <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-7 text-gray-700 sm:text-lg">{home.intro}</p>
+        <h1 className="text-brand text-center text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">{home.h1}</h1>
+        <p className="mx-auto mt-5 max-w-3xl text-center text-base leading-7 text-gray-700 sm:text-lg lg:text-xl lg:leading-8">{home.intro}</p>
         <div className="mt-6">
           <Generator
             strings={dict.generator}
