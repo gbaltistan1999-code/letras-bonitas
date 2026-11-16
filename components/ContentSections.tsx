@@ -1,4 +1,4 @@
-import { Info } from "lucide-react";
+import { Info, Target } from "lucide-react";
 import type { Block, Section } from "@/types/content";
 import type { Dictionary } from "@/types/dictionary";
 import { siteConfig, type Locale } from "@/lib/site-config";
@@ -102,18 +102,40 @@ export function ContentSections({
   locale,
   dict,
   headingLevel = 2,
+  boxed = false,
 }: {
   sections: Section[];
   locale: Locale;
   dict: Dictionary;
   headingLevel?: 2 | 3;
+  /** Render each section as its own bordered card (author page). */
+  boxed?: boolean;
 }) {
   const H = `h${headingLevel}` as const;
   return (
     <>
       {sections.map((section) => (
-        <section key={section.heading} aria-labelledby={slugify(section.heading)} className="prose-lh mt-12 first:mt-0">
-          <H id={slugify(section.heading)} className="text-2xl font-semibold tracking-tight text-ink">
+        <section
+          key={section.heading}
+          aria-labelledby={slugify(section.heading)}
+          className={
+            boxed
+              ? "prose-lh mt-8 rounded-2xl border-2 border-purple-200 bg-white/80 p-6 shadow-sm shadow-purple-100 first:mt-0 sm:p-10"
+              : "prose-lh mt-12 first:mt-0"
+          }
+        >
+          {section.featured ? (
+            <span
+              aria-hidden="true"
+              className="bg-brand mx-auto mb-4 flex size-12 items-center justify-center rounded-full text-white shadow-md shadow-purple-200"
+            >
+              <Target className="size-6" />
+            </span>
+          ) : null}
+          <H
+            id={slugify(section.heading)}
+            className={`font-bold tracking-tight text-ink ${boxed ? "text-2xl sm:text-3xl" : "text-2xl font-semibold"} ${section.featured ? "text-center" : ""}`}
+          >
             {section.heading}
           </H>
           {section.blocks.map((block, i) => (

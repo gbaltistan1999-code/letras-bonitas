@@ -64,7 +64,7 @@ export function InfoPageView({ locale, pageKey }: { locale: Locale; pageKey: Inf
 
       {page.sections.length ? (
         <div className="mt-10">
-          <ContentSections sections={page.sections} locale={locale} dict={dict} />
+          <ContentSections sections={page.sections} locale={locale} dict={dict} boxed={pageKey === "author"} />
         </div>
       ) : null}
 

@@ -68,7 +68,21 @@ const info: InfoPages = {
       "This page introduces the person responsible for LetrasHub: who builds and tests the text styles and writes the site's guides.",
     sections: [
       {
-        heading: "About the author",
+        heading: "Our mission",
+        featured: true,
+        blocks: [
+          {
+            type: "p",
+            text: "Our mission is to let anyone style their text without hassle. We want you to turn your name, nickname or phrase into beautiful fonts in seconds: free, with no sign-up, and without your text ever leaving your browser.",
+          },
+          {
+            type: "p",
+            text: "We believe customizing your profile should be easy and honest. That is why we explain which styles work in each app, which ones may show up as boxes, and how to use them without hurting accessibility.",
+          },
+        ],
+      },
+      {
+        heading: "Who built LetrasHub",
         blocks: [{ type: "owner" }],
       },
       {

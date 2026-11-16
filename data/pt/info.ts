@@ -71,7 +71,21 @@ const info: InfoPages = {
       "Esta página apresenta a pessoa responsável pelo LetrasHub: quem cria e testa os estilos de letras e escreve os guias do site.",
     sections: [
       {
-        heading: "Sobre o autor",
+        heading: "Nossa missão",
+        featured: true,
+        blocks: [
+          {
+            type: "p",
+            text: "Nossa missão é que qualquer pessoa possa dar estilo ao seu texto sem complicação. Queremos que você transforme seu nome, nick ou frase em letras bonitas em segundos, de graça, sem cadastro e sem que o texto saia do seu navegador.",
+          },
+          {
+            type: "p",
+            text: "Acreditamos que personalizar o perfil deve ser fácil e honesto. Por isso explicamos quais estilos funcionam em cada app, quais podem aparecer como quadradinhos e como usá-los sem prejudicar a acessibilidade.",
+          },
+        ],
+      },
+      {
+        heading: "Quem criou o LetrasHub",
         blocks: [{ type: "owner" }],
       },
       {

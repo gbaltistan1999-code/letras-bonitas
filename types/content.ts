@@ -19,6 +19,8 @@ export type Block =
 export interface Section {
   heading: string;
   blocks: Block[];
+  /** Centered heading with an icon above it (used for the mission card). */
+  featured?: boolean;
 }
 
 export interface FAQ {
