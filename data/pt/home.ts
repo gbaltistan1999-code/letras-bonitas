@@ -103,6 +103,8 @@ const home: HomeContent = {
   stylesHeading: "Tipos de letras disponíveis",
   stylesIntro: "Cada página traz o gerador já filtrado no estilo, exemplos e dicas específicas.",
   platformsHeading: "Letras para redes sociais e jogos",
+  platformsIntro:
+    "Letras prontas para o seu perfil: cada página explica quais estilos o app aceita, onde colar e quais são os limites.",
   teasers: {
     cursive: "Letras manuscritas e elegantes para bio e nome.",
     gothic: "Visual medieval, perfeito para nick com atitude.",

@@ -36,6 +36,8 @@ export interface HomeContent {
   stylesHeading: string;
   stylesIntro: string;
   platformsHeading: string;
+  /** One-line intro for the social media / games box. */
+  platformsIntro: string;
   /** One-line teaser per style/platform page, used in link cards. */
   teasers: Record<StylePageKey, string>;
   faqs: FAQ[];

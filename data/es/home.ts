@@ -104,6 +104,8 @@ const home: HomeContent = {
   stylesIntro:
     "Cada página tiene el generador ya filtrado en ese estilo, ejemplos y consejos específicos.",
   platformsHeading: "Letras para redes sociales y juegos",
+  platformsIntro:
+    "Letras listas para tu perfil: cada página explica qué estilos acepta la app, dónde pegarlos y qué límites tiene.",
   teasers: {
     cursive: "Letras manuscritas y elegantes para biografías y nombres.",
     gothic: "Estilo medieval, perfecto para nicks con carácter.",

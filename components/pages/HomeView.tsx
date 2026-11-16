@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Share2 } from "lucide-react";
 import { siteConfig, type Locale } from "@/lib/site-config";
 import { letterStyleKeys, pathFor, platformKeys, type StylePageKey } from "@/lib/routes";
 import { getDictionary, getHome, getStylePages } from "@/lib/i18n";
@@ -63,6 +64,26 @@ export function HomeView({ locale }: { locale: Locale }) {
         </div>
       </section>
 
+      {/* Social media & games: its own highlighted box, right under the generator. */}
+      <section aria-labelledby="social-heading" className="mx-auto mt-12 max-w-5xl px-4">
+        <div className="rounded-3xl border border-purple-100 bg-linear-to-br from-purple-100/70 via-pink-50 to-white p-5 shadow-lg shadow-purple-100/60 sm:p-8">
+          <div className="flex items-start gap-3">
+            <span aria-hidden="true" className="bg-brand flex size-10 shrink-0 items-center justify-center rounded-xl text-white shadow-sm shadow-purple-200">
+              <Share2 className="size-5" />
+            </span>
+            <div>
+              <h2 id="social-heading" className="text-2xl font-semibold tracking-tight text-ink">
+                {home.platformsHeading}
+              </h2>
+              <p className="mt-1 text-ink-soft">{home.platformsIntro}</p>
+            </div>
+          </div>
+          <div className="mt-6">
+            <PageLinkCards cards={platformKeys.map(card)} />
+          </div>
+        </div>
+      </section>
+
       <div className="mx-auto mt-16 max-w-3xl px-4">
         <ContentSections sections={first} locale={locale} dict={dict} />
       </div>
@@ -74,10 +95,6 @@ export function HomeView({ locale }: { locale: Locale }) {
         <p className="mt-2 text-ink-soft">{home.stylesIntro}</p>
         <div className="mt-5">
           <PageLinkCards cards={letterStyleKeys.map(card)} />
-        </div>
-        <h2 className="mt-10 text-2xl font-semibold tracking-tight text-ink">{home.platformsHeading}</h2>
-        <div className="mt-5">
-          <PageLinkCards cards={platformKeys.map(card)} />
         </div>
       </section>
 

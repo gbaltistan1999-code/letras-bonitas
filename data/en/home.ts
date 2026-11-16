@@ -100,6 +100,8 @@ const home: HomeContent = {
   stylesHeading: "Text styles",
   stylesIntro: "Each page opens the generator on that style, with examples and specific tips.",
   platformsHeading: "Fonts for social media and games",
+  platformsIntro:
+    "Fonts ready for your profile: each page explains which styles the app accepts, where to paste them and what the limits are.",
   teasers: {
     cursive: "Handwriting-style letters for bios and names.",
     gothic: "Old-English blackletter for bold nicknames.",
