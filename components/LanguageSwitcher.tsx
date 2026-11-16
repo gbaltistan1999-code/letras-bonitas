@@ -34,14 +34,21 @@ export function LanguageSwitcher({ label, variant = "inline" }: { label: string;
     );
   }
   return (
-    <nav aria-label={label} className="flex items-center gap-1">
-      <Globe aria-hidden="true" className="mr-0.5 size-4 text-muted" />
+    <nav
+      aria-label={label}
+      className="flex items-center gap-0.5 rounded-full border border-line bg-surface p-1"
+    >
+      <span className="flex items-center pl-2 pr-1.5" aria-hidden="true">
+        <Globe className="size-4 text-muted" />
+      </span>
       {links.map((l) => (
         <LangLink
           key={l.locale}
           {...l}
-          className={`rounded-md px-2 py-1.5 text-sm font-medium ${
-            l.current ? "bg-accent-soft text-accent" : "text-ink-soft hover:bg-surface hover:text-ink"
+          className={`min-w-10 rounded-full px-3 py-1 text-center text-xs font-semibold tracking-wide transition-colors ${
+            l.current
+              ? "bg-accent text-white shadow-sm"
+              : "text-ink-soft hover:bg-page hover:text-ink"
           }`}
         />
       ))}
