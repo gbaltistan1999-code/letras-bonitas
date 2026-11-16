@@ -32,10 +32,11 @@ export function StylePageView({ locale, pageKey }: { locale: Locale; pageKey: St
           breadcrumbSchema(crumbs),
         )}
       />
-      <section className="mx-auto max-w-4xl px-4 pt-6 sm:pt-8">
-        <Breadcrumbs items={crumbs} label={dict.common.breadcrumbLabel} />
-        <h1 className="mt-4 text-3xl font-bold tracking-tight text-ink sm:text-4xl">{page.h1}</h1>
-        <p className="mt-3 max-w-2xl text-base leading-7 text-ink-soft sm:text-lg">{page.intro}</p>
+      <div className="hero-dark">
+      <section className="mx-auto max-w-4xl px-4 pb-10 pt-6 sm:pb-14 sm:pt-8">
+        <Breadcrumbs items={crumbs} label={dict.common.breadcrumbLabel} tone="dark" />
+        <h1 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">{page.h1}</h1>
+        <p className="mt-3 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">{page.intro}</p>
         <div className="mt-6">
           <Generator
             strings={dict.generator}
@@ -47,6 +48,7 @@ export function StylePageView({ locale, pageKey }: { locale: Locale; pageKey: St
           />
         </div>
       </section>
+      </div>
 
       <article className="mx-auto mt-14 max-w-3xl px-4">
         <ContentSections sections={page.sections} locale={locale} dict={dict} />
