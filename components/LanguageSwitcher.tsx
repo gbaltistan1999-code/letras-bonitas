@@ -45,7 +45,8 @@ export function LanguageSwitcher({ label, variant = "inline" }: { label: string;
         <LangLink
           key={l.locale}
           {...l}
-          className={`min-w-10 rounded-full px-3 py-1 text-center text-xs font-semibold tracking-wide transition-colors ${
+          full
+          className={`whitespace-nowrap rounded-full px-3 py-1 text-center text-sm font-medium transition-colors ${
             l.current
               ? "bg-accent text-white shadow-sm"
               : "text-ink-soft hover:bg-page hover:text-ink"
