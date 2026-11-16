@@ -50,10 +50,9 @@ export function HomeView({ locale }: { locale: Locale }) {
           webApplicationSchema(locale, "home", dict.generator.heading, home.metaDescription),
         )}
       />
-      <div className="hero-dark">
-      <section className="mx-auto max-w-4xl px-4 pb-10 pt-10 sm:pb-14 sm:pt-16">
-        <h1 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">{home.h1}</h1>
-        <p className="mt-3 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">{home.intro}</p>
+      <section className="mx-auto max-w-4xl px-4 pt-8 sm:pt-12">
+        <h1 className="text-3xl font-bold tracking-tight text-ink sm:text-5xl">{home.h1}</h1>
+        <p className="mt-3 max-w-2xl text-base leading-7 text-ink-soft sm:text-lg">{home.intro}</p>
         <div className="mt-6">
           <Generator
             strings={dict.generator}
@@ -63,7 +62,6 @@ export function HomeView({ locale }: { locale: Locale }) {
           />
         </div>
       </section>
-      </div>
 
       <div className="mx-auto mt-16 max-w-3xl px-4">
         <ContentSections sections={first} locale={locale} dict={dict} />

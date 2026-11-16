@@ -103,13 +103,3 @@ body {
 dialog::backdrop {
   background: rgb(31 28 26 / 0.45);
 }
-
-/* Dark navy hero band (homepage + style pages) with a soft violet/pink glow. */
-.hero-dark {
-  background-color: #0b0f1a;
-  background-image:
-    radial-gradient(ellipse 70% 60% at 50% 0%, rgb(124 58 237 / 0.22), transparent 70%),
-    radial-gradient(ellipse 40% 50% at 100% 100%, rgb(236 72 153 / 0.10), transparent 70%),
-    linear-gradient(135deg, #090d17 0%, #111827 100%);
-  color: #ffffff;
-}
