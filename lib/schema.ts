@@ -51,6 +51,21 @@ export function webPageSchema(locale: Locale, key: PageKey, name: string, descri
   };
 }
 
+/** ProfilePage + Person for the author page. Null until the owner name and bio exist. */
+export function authorProfileSchema(locale: Locale): Json | null {
+  const { name, bio } = siteConfig.owner;
+  if (!name || !bio[locale]) return null;
+  const url = absoluteUrl(pathFor(locale, "author"));
+  return {
+    "@type": "ProfilePage",
+    "@id": `${url}#profile`,
+    url,
+    inLanguage: lang(locale),
+    isPartOf: { "@id": websiteId },
+    mainEntity: { "@type": "Person", name, description: bio[locale], url },
+  };
+}
+
 export function breadcrumbSchema(items: { name: string; path: string }[]): Json {
   return {
     "@type": "BreadcrumbList",

@@ -22,7 +22,7 @@ export type StylePageKey = (typeof stylePageKeys)[number];
 export const letterStyleKeys: StylePageKey[] = ["cursive", "gothic", "small", "strike"];
 export const platformKeys: StylePageKey[] = ["nick", "freefire", "instagram", "tiktok", "whatsapp", "discord"];
 
-export const infoPageKeys = ["about", "contact", "faq", "privacy", "terms", "cookies", "disclaimer"] as const;
+export const infoPageKeys = ["about", "author", "contact", "faq", "privacy", "terms", "cookies", "disclaimer"] as const;
 export type InfoPageKey = (typeof infoPageKeys)[number];
 
 export type PageKey = "home" | StylePageKey | InfoPageKey;
@@ -39,6 +39,7 @@ export const slugs: Record<Exclude<PageKey, "home">, Record<Locale, string>> = {
   discord: { es: "letras-para-discord", pt: "letras-para-discord", en: "discord-fonts" },
   nick: { es: "letras-para-nick", pt: "nick-bonito", en: "nickname-fonts" },
   about: { es: "sobre-nosotros", pt: "sobre-nos", en: "about" },
+  author: { es: "autor", pt: "autor", en: "author" },
   contact: { es: "contacto", pt: "contato", en: "contact" },
   faq: { es: "preguntas-frecuentes", pt: "perguntas-frequentes", en: "faq" },
   privacy: { es: "politica-de-privacidad", pt: "politica-de-privacidade", en: "privacy-policy" },

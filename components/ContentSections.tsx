@@ -82,10 +82,18 @@ function OwnerBlock({ locale, dict }: { locale: Locale; dict: Dictionary }) {
     );
   }
   return (
-    <>
-      <p className="font-semibold !text-ink">{name}</p>
-      <p>{bio[locale]}</p>
-    </>
+    <div className="mt-4 flex gap-4 rounded-2xl border border-line bg-surface p-5">
+      <span
+        aria-hidden="true"
+        className="flex size-14 shrink-0 items-center justify-center rounded-full bg-accent text-xl font-bold text-white"
+      >
+        {name.trim().charAt(0).toUpperCase()}
+      </span>
+      <div className="min-w-0">
+        <p className="!mt-0 text-lg font-semibold !text-ink">{name}</p>
+        <p className="!mt-1">{bio[locale]}</p>
+      </div>
+    </div>
   );
 }
 

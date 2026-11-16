@@ -42,13 +42,64 @@ const info: InfoPages = {
           },
         ],
       },
-      { heading: "Who's behind it", blocks: [{ type: "owner" }] },
+      {
+        heading: "Who's behind it",
+        blocks: [{ type: "owner" }, { type: "p", text: "More details on the [author](author) page." }],
+      },
       {
         heading: "Contact and corrections",
         blocks: [
           {
             type: "p",
             text: "If you spot an error, a style that doesn't behave as described, or have a suggestion, get in touch via the [contact page](contact). We review content when platforms or the Unicode standard change.",
+          },
+        ],
+      },
+    ],
+  },
+
+  author: {
+    metaTitle: "LetrasHub Author: Who Writes and Reviews the Content | LetrasHub",
+    metaDescription:
+      "Meet the person behind LetrasHub: who builds the text styles, writes the guides and checks that they work on each platform.",
+    h1: "Author",
+    label: "Author",
+    intro:
+      "This page introduces the person responsible for LetrasHub: who builds and tests the text styles and writes the site's guides.",
+    sections: [
+      {
+        heading: "About the author",
+        blocks: [{ type: "owner" }],
+      },
+      {
+        heading: "What they do at LetrasHub",
+        blocks: [
+          {
+            type: "ul",
+            items: [
+              "Builds and maintains the Unicode character tables behind the [generator](home).",
+              "Writes the guides for each style and platform, such as [cursive text](cursive) and [Free Fire fonts](freefire).",
+              "Tests the styles in the apps we mention and notes what works and what doesn't.",
+              "Handles corrections and suggestions sent through the [contact page](contact).",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "How the content is reviewed",
+        blocks: [
+          {
+            type: "p",
+            text: "Explanations are based on the official Unicode Consortium tables and on real tests in each platform. When an app changes what it allows in names or bios, or a new Unicode version is released, the affected content is reviewed and updated.",
+          },
+        ],
+      },
+      {
+        heading: "Contact the author",
+        blocks: [
+          {
+            type: "p",
+            text: "If you find a mistake or want to suggest a new style, use the [contact page](contact). You can also read more about the project on the [About](about) page.",
           },
         ],
       },

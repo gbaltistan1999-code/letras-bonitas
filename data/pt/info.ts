@@ -44,7 +44,10 @@ const info: InfoPages = {
       },
       {
         heading: "Quem está por trás",
-        blocks: [{ type: "owner" }],
+        blocks: [
+          { type: "owner" },
+          { type: "p", text: "Mais detalhes na página do [autor](author)." },
+        ],
       },
       {
         heading: "Contato e correções",
@@ -52,6 +55,54 @@ const info: InfoPages = {
           {
             type: "p",
             text: "Se encontrar um erro numa explicação, um estilo que não funciona como descrevemos ou quiser sugerir algo, fale com a gente pela página de [contato](contact). Revisamos o conteúdo quando as plataformas ou o padrão Unicode mudam.",
+          },
+        ],
+      },
+    ],
+  },
+
+  author: {
+    metaTitle: "Autor do LetrasHub: Quem Escreve e Revisa o Conteúdo | LetrasHub",
+    metaDescription:
+      "Conheça a pessoa por trás do LetrasHub: quem cria os estilos de letras, escreve os guias e confere se funcionam em cada plataforma.",
+    h1: "Autor",
+    label: "Autor",
+    intro:
+      "Esta página apresenta a pessoa responsável pelo LetrasHub: quem cria e testa os estilos de letras e escreve os guias do site.",
+    sections: [
+      {
+        heading: "Sobre o autor",
+        blocks: [{ type: "owner" }],
+      },
+      {
+        heading: "O que faz no LetrasHub",
+        blocks: [
+          {
+            type: "ul",
+            items: [
+              "Cria e mantém as tabelas de caracteres Unicode usadas pelo [gerador](home).",
+              "Escreve os guias de cada estilo e plataforma, como as [letras cursivas](cursive) e as [letras para Free Fire](freefire).",
+              "Testa os estilos nos apps que citamos e anota o que funciona e o que não funciona.",
+              "Responde às correções e sugestões enviadas pela página de [contato](contact).",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Como o conteúdo é revisado",
+        blocks: [
+          {
+            type: "p",
+            text: "As explicações se baseiam nas tabelas oficiais do Unicode Consortium e em testes reais em cada plataforma. Quando um app muda o que permite em nomes ou bios, ou quando sai uma nova versão do Unicode, o conteúdo afetado é revisado e atualizado.",
+          },
+        ],
+      },
+      {
+        heading: "Falar com o autor",
+        blocks: [
+          {
+            type: "p",
+            text: "Se encontrar um erro ou quiser sugerir um estilo novo, escreva pela página de [contato](contact). Você também pode ler mais sobre o projeto em [Sobre nós](about).",
           },
         ],
       },

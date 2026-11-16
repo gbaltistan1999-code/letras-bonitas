@@ -3,7 +3,7 @@ import { Mail } from "lucide-react";
 import { siteConfig, type Locale } from "@/lib/site-config";
 import { pathFor, type InfoPageKey } from "@/lib/routes";
 import { getDictionary, getInfoPages } from "@/lib/i18n";
-import { breadcrumbSchema, graph, webPageSchema } from "@/lib/schema";
+import { authorProfileSchema, breadcrumbSchema, graph, webPageSchema } from "@/lib/schema";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContentSections } from "@/components/ContentSections";
 import { ContactForm } from "@/components/ContactForm";
@@ -19,6 +19,12 @@ export function InfoPageView({ locale, pageKey }: { locale: Locale; pageKey: Inf
     { name: dict.common.home, path: pathFor(locale, "home") },
     { name: page.label, path: pathFor(locale, pageKey) },
   ];
+  const profile = pageKey === "author" ? authorProfileSchema(locale) : null;
+  const schemaNodes = [
+    webPageSchema(locale, pageKey, page.metaTitle, page.metaDescription),
+    breadcrumbSchema(crumbs),
+    ...(profile ? [profile] : []),
+  ];
   const updated = new Date(`${siteConfig.legalLastUpdated}T12:00:00Z`).toLocaleDateString(siteConfig.localeMeta[locale].hreflang, {
     year: "numeric",
     month: "long",
@@ -27,7 +33,7 @@ export function InfoPageView({ locale, pageKey }: { locale: Locale; pageKey: Inf
 
   return (
     <article className="mx-auto max-w-3xl px-4 pt-6 sm:pt-8">
-      <JsonLd data={graph(webPageSchema(locale, pageKey, page.metaTitle, page.metaDescription), breadcrumbSchema(crumbs))} />
+      <JsonLd data={graph(...schemaNodes)} />
       <Breadcrumbs items={crumbs} label={dict.common.breadcrumbLabel} />
       <h1 className="mt-4 text-3xl font-bold tracking-tight text-ink sm:text-4xl">{page.h1}</h1>
       {page.showUpdated ? (

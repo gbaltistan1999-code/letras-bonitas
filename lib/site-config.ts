@@ -17,11 +17,15 @@ export const siteConfig = {
    * While these are `null` the site shows clearly marked "pending" notices
    * instead of inventing contact details or an author identity.
    */
-  contactEmail: null as string | null,
+  contactEmail: "Ishp434@gmail.com" as string | null,
   owner: {
-    name: null as string | null,
+    name: "Ashfaq Ahmed" as string | null,
     /** Short bio per language. */
-    bio: { es: null, pt: null, en: null } as Record<Locale, string | null>,
+    bio: {
+      es: "LetrasHub está desarrollado por Ashfaq Ahmed, un desarrollador centrado en crear herramientas web modernas y fáciles de usar. La plataforma permite transformar texto normal en letras elegantes y decorativas que se pueden copiar y pegar en redes sociales, perfiles y plataformas digitales.",
+      pt: "O LetrasHub é desenvolvido por Ashfaq Ahmed, um desenvolvedor focado em criar ferramentas web modernas e fáceis de usar. A plataforma facilita transformar texto comum em letras estilosas e decorativas que podem ser copiadas e coladas em redes sociais, perfis e plataformas digitais.",
+      en: "LetrasHub is developed by Ashfaq Ahmed, a developer focused on creating modern, user-friendly web tools. The platform makes it easy to transform ordinary text into stylish, decorative fonts that users can copy and paste across social media, profiles, and digital platforms.",
+    } as Record<Locale, string | null>,
   },
 
   /** Date shown on legal pages as "last updated" (ISO yyyy-mm-dd). */
