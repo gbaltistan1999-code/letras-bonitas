@@ -205,6 +205,12 @@ const posts: BlogPosts = {
       "Dónde puedes usar letras bonitas en Instagram, cómo pegarlas paso a paso y qué errores evitar para que tu perfil se siga leyendo bien.",
     published: "2026-11-17",
     readMinutes: 4,
+    image: {
+      src: "/blog/instagram-bio.jpg",
+      width: 1200,
+      height: 630,
+      alt: "Teléfono con un perfil decorado con letras bonitas y botones para copiar estilos, rodeado de corazones y estrellas",
+    },
     intro:
       "Las letras bonitas son una forma rápida de dar personalidad a tu perfil de Instagram sin descargar ninguna app. Funcionan porque no son una fuente: son caracteres Unicode que se copian y se pegan como cualquier otro texto.",
     sections: [
@@ -278,6 +284,12 @@ const posts: BlogPosts = {
       "Los cuadritos vacíos no significan que el texto esté roto: el dispositivo no tiene un dibujo para ese carácter. Te explicamos por qué pasa y qué estilos fallan menos.",
     published: "2026-11-17",
     readMinutes: 3,
+    image: {
+      src: "/blog/letras-cuadritos.jpg",
+      width: 1200,
+      height: 630,
+      alt: "Dos teléfonos: uno muestra letras bonitas correctamente y el otro muestra cuadritos vacíos en su lugar",
+    },
     intro:
       "Copias un estilo que se veía perfecto y, al pegarlo, aparecen cuadritos vacíos (□) o signos de interrogación. No has hecho nada mal: el texto está bien, pero el dispositivo que lo muestra no sabe dibujarlo.",
     sections: [
@@ -348,6 +360,12 @@ const posts: BlogPosts = {
       "Cómo crear un nick con estilo para Free Fire: ejemplos listos para copiar, qué símbolos combinan bien y qué comprobar antes de cambiar tu nombre.",
     published: "2026-11-17",
     readMinutes: 4,
+    image: {
+      src: "/blog/free-fire-nick.jpg",
+      width: 1200,
+      height: 630,
+      alt: "Placa de nombre de jugador estilo gamer con corona, espadas y calavera sobre un fondo morado",
+    },
     intro:
       "Un buen nick se reconoce en una partida de un vistazo. Con letras bonitas y algunos símbolos puedes hacer que el tuyo destaque sin que deje de leerse.",
     sections: [

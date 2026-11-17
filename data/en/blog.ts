@@ -10,6 +10,12 @@ const posts: BlogPosts = {
       "Where you can use fancy text on Instagram, how to paste it step by step, and which mistakes to avoid so your profile stays easy to read.",
     published: "2026-11-17",
     readMinutes: 4,
+    image: {
+      src: "/blog/instagram-bio.jpg",
+      width: 1200,
+      height: 630,
+      alt: "Phone showing a profile decorated with fancy text and copy buttons for styles, surrounded by hearts and stars",
+    },
     intro:
       "Fancy text is a quick way to give your Instagram profile some personality without downloading an app. It works because it isn't a font: it's Unicode characters that you copy and paste like any other text.",
     sections: [
@@ -83,6 +89,12 @@ const posts: BlogPosts = {
       "Empty boxes don't mean the text is broken: the device has no drawing for that character. Here's why it happens and which styles fail least.",
     published: "2026-11-17",
     readMinutes: 3,
+    image: {
+      src: "/blog/letras-cuadritos.jpg",
+      width: 1200,
+      height: 630,
+      alt: "Two phones: one shows fancy text correctly and the other shows empty boxes instead",
+    },
     intro:
       "You copy a style that looked perfect and, once pasted, it shows empty boxes (□) or question marks. You didn't do anything wrong: the text is fine, but the device showing it doesn't know how to draw it.",
     sections: [
@@ -153,6 +165,12 @@ const posts: BlogPosts = {
       "How to make a stylish Free Fire nickname: copy-ready examples, which symbols work well together, and what to check before changing your name.",
     published: "2026-11-17",
     readMinutes: 4,
+    image: {
+      src: "/blog/free-fire-nick.jpg",
+      width: 1200,
+      height: 630,
+      alt: "Gaming-style player nameplate with a crown, swords and a skull on a purple background",
+    },
     intro:
       "A good nickname is recognizable at a glance mid-match. With fancy letters and a couple of symbols, yours can stand out without becoming hard to read.",
     sections: [

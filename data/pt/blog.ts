@@ -10,6 +10,12 @@ const posts: BlogPosts = {
       "Onde dá para usar letras bonitas no Instagram, como colar passo a passo e quais erros evitar para o seu perfil continuar fácil de ler.",
     published: "2026-11-17",
     readMinutes: 4,
+    image: {
+      src: "/blog/instagram-bio.jpg",
+      width: 1200,
+      height: 630,
+      alt: "Celular com um perfil decorado com letras bonitas e botões para copiar estilos, cercado de corações e estrelas",
+    },
     intro:
       "As letras bonitas são um jeito rápido de dar personalidade ao seu perfil do Instagram sem baixar nenhum app. Elas funcionam porque não são uma fonte: são caracteres Unicode que você copia e cola como qualquer outro texto.",
     sections: [
@@ -83,6 +89,12 @@ const posts: BlogPosts = {
       "Quadradinhos vazios não significam que o texto quebrou: o aparelho não tem um desenho para aquele caractere. Explicamos por que acontece e quais estilos falham menos.",
     published: "2026-11-17",
     readMinutes: 3,
+    image: {
+      src: "/blog/letras-cuadritos.jpg",
+      width: 1200,
+      height: 630,
+      alt: "Dois celulares: um mostra letras bonitas corretamente e o outro mostra quadradinhos vazios no lugar",
+    },
     intro:
       "Você copia um estilo que parecia perfeito e, ao colar, aparecem quadradinhos vazios (□) ou pontos de interrogação. Você não fez nada errado: o texto está certo, mas o aparelho que o mostra não sabe desenhá-lo.",
     sections: [
@@ -153,6 +165,12 @@ const posts: BlogPosts = {
       "Como criar um nick estiloso para Free Fire: exemplos prontos para copiar, quais símbolos combinam bem e o que conferir antes de trocar o nome.",
     published: "2026-11-17",
     readMinutes: 4,
+    image: {
+      src: "/blog/free-fire-nick.jpg",
+      width: 1200,
+      height: 630,
+      alt: "Placa de nome de jogador estilo gamer com coroa, espadas e caveira sobre um fundo roxo",
+    },
     intro:
       "Um bom nick é reconhecido numa partida num piscar de olhos. Com letras bonitas e alguns símbolos, você deixa o seu em destaque sem perder a leitura.",
     sections: [
