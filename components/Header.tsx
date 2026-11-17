@@ -59,7 +59,11 @@ export function Header({ homeHref, labels, letterStyles, platforms, links }: Hea
     };
   }, [stylesOpen, menuOpen]);
 
-  const isActive = (href: string) => publicPath(pathname ?? "/") === href;
+  const isActive = (href: string) => {
+    const p = publicPath(pathname ?? "/");
+    // The blog link stays active on every post (/blog/…).
+    return p === href || (href.endsWith("/blog") && p.startsWith(`${href}/`));
+  };
 
   // z-50: an opened mobile menu must cover the cookie banner (z-40).
   return (

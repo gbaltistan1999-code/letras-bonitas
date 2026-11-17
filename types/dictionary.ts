@@ -53,6 +53,25 @@ export interface Dictionary {
     categories: Record<CategoryId, string>;
   };
   styleNames: Record<StyleId, string>;
+  blog: {
+    /** Nav / breadcrumb label. */
+    label: string;
+    metaTitle: string;
+    metaDescription: string;
+    h1: string;
+    intro: string;
+    readMore: string;
+    /** "{date}" placeholder. */
+    publishedOn: string;
+    /** "{n}" placeholder. */
+    minRead: string;
+    byline: string;
+    relatedHeading: string;
+    ctaTitle: string;
+    ctaText: string;
+    ctaButton: string;
+    allPosts: string;
+  };
   common: {
     breadcrumbLabel: string;
     home: string;

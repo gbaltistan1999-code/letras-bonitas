@@ -60,8 +60,11 @@ for (const { loc, alts } of entries) {
   if (canonical !== loc) fail(loc, `canonical ${canonical}`);
 
   const headAlts = Object.fromEntries([...head.matchAll(/<link rel="alternate" hrefLang="([^"]+)" href="([^"]+)"/g)].map((a) => [a[1], a[2]]));
-  for (const key of ["es", "pt-BR", "en", "x-default"]) {
-    if (!headAlts[key]) fail(loc, `missing hreflang ${key}`);
+  // Most pages exist in es, pt-BR and en; some blog posts are published in only
+  // one or two languages. Every page needs x-default and its own language, and
+  // <head> must list exactly the same alternates as the sitemap.
+  for (const key of ["x-default", altLang]) if (!headAlts[key]) fail(loc, `missing hreflang ${key}`);
+  for (const key of new Set([...Object.keys(alts), ...Object.keys(headAlts)])) {
     if (headAlts[key] !== alts[key]) fail(loc, `hreflang ${key} differs between <head> and sitemap`);
   }
   pageAlternates.set(loc, headAlts);

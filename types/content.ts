@@ -13,8 +13,13 @@ export type Block =
   | { type: "note"; text: string }
   /** Owner name and bio from lib/site-config.ts (or a visible "pending" notice). */
   | { type: "owner" }
+  /** Ready-made styled lines, each with its own Copy button. */
+  | { type: "copy"; items: CopyItem[] }
   /** Renders real generator output for `text` in each listed style. */
   | { type: "examples"; text: string; styles: StyleId[] };
+
+/** A copyable line; the optional label is shown but not copied. */
+export type CopyItem = string | { label: string; text: string };
 
 export interface Section {
   heading: string;
@@ -74,6 +79,29 @@ export interface InfoPageContent {
   showUpdated?: boolean;
   sections: Section[];
 }
+
+export interface BlogPost {
+  metaTitle: string;
+  metaDescription: string;
+  title: string;
+  /** One or two sentences for the blog index card. */
+  excerpt: string;
+  /** ISO yyyy-mm-dd. */
+  published: string;
+  readMinutes: number;
+  /** Featured image in public/ (ideally 1200×630): top of the post, index card and social share. */
+  image?: { src: string; width: number; height: number; alt: string };
+  intro: string;
+  sections: Section[];
+  /** Shown after the article and emitted as FAQPage markup. */
+  faqs?: FAQ[];
+  /** Closing section shown after the FAQ. */
+  outro?: Section;
+  related: import("@/lib/blog-routes").BlogPostId[];
+}
+
+/** Only the posts published in that language (see lib/blog-routes.ts). */
+export type BlogPosts = Partial<Record<import("@/lib/blog-routes").BlogPostId, BlogPost>>;
 
 export interface FaqPageContent extends InfoPageContent {
   groups: { heading: string; faqs: FAQ[] }[];

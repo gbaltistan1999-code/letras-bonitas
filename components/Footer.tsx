@@ -9,7 +9,7 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 export function Footer({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
   const linkCls = "text-sm text-ink-soft hover:text-accent";
-  const site = (["about", "author", "faq", "contact"] as const).map((k) => ({ href: pathFor(locale, k), label: pageLabel(locale, k) }));
+  const site = (["blog", "about", "author", "faq", "contact"] as const).map((k) => ({ href: pathFor(locale, k), label: pageLabel(locale, k) }));
   const legal = (["privacy", "terms", "cookies", "disclaimer"] as const).map((k) => ({
     href: pathFor(locale, k),
     label: pageLabel(locale, k),

@@ -28,7 +28,7 @@ export function SiteChrome({ locale, children }: { locale: Locale; children: Rea
           labels={dict.nav}
           letterStyles={letterStyleKeys.map(toLink)}
           platforms={platformKeys.map(toLink)}
-          links={[toLink("about"), toLink("faq")]}
+          links={[toLink("blog"), toLink("about"), toLink("faq")]}
         />
         <main id="main" className="flex-1">
           {children}

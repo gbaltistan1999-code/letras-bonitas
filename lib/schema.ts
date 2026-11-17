@@ -66,6 +66,45 @@ export function authorProfileSchema(locale: Locale): Json | null {
   };
 }
 
+/** BlogPosting for an article page. Author/publisher only when the owner name exists. */
+export function blogPostingSchema(
+  locale: Locale,
+  opts: { url: string; title: string; description: string; published: string; image?: string },
+): Json {
+  const node: Json = {
+    "@type": "BlogPosting",
+    "@id": `${opts.url}#article`,
+    mainEntityOfPage: opts.url,
+    url: opts.url,
+    headline: opts.title,
+    description: opts.description,
+    datePublished: opts.published,
+    dateModified: opts.published,
+    inLanguage: lang(locale),
+    isPartOf: { "@id": websiteId },
+  };
+  if (opts.image) node.image = absoluteUrl(opts.image);
+  if (siteConfig.owner.name) {
+    const person = { "@type": "Person", name: siteConfig.owner.name, url: absoluteUrl(pathFor(locale, "author")) };
+    node.author = person;
+    node.publisher = person;
+  }
+  return node;
+}
+
+/** FAQPage from visible Q&A. Inline [text](target) links become plain text. */
+export function faqSchema(faqs: { q: string; a: string }[]): Json {
+  const plain = (s: string) => s.replace(/\[([^\]]+)\]\([^)\s]+\)/g, "$1");
+  return {
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: plain(f.a) },
+    })),
+  };
+}
+
 export function breadcrumbSchema(items: { name: string; path: string }[]): Json {
   return {
     "@type": "BreadcrumbList",

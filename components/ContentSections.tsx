@@ -4,6 +4,7 @@ import type { Dictionary } from "@/types/dictionary";
 import { siteConfig, type Locale } from "@/lib/site-config";
 import { transform } from "@/lib/unicode/styles";
 import { RichText } from "./RichText";
+import { CopyList } from "./CopyList";
 
 /** Turns a heading into a stable, URL-safe id (accents removed). */
 export function slugify(text: string): string {
@@ -66,6 +67,8 @@ function BlockView({ block, locale, dict }: { block: Block; locale: Locale; dict
           </table>
         </div>
       );
+    case "copy":
+      return <CopyList items={block.items} labels={{ copy: dict.generator.copy, copied: dict.generator.copied }} />;
     case "owner":
       return <OwnerBlock locale={locale} dict={dict} />;
   }

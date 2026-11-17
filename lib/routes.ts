@@ -4,6 +4,7 @@
  * This file has no server-only imports so the language switcher can use it.
  */
 import { siteConfig, type Locale } from "./site-config";
+import { postIdFromSlug, type BlogPostId } from "./blog-routes";
 
 export const stylePageKeys = [
   "cursive",
@@ -25,9 +26,11 @@ export const platformKeys: StylePageKey[] = ["nick", "freefire", "instagram", "t
 export const infoPageKeys = ["about", "author", "contact", "faq", "privacy", "terms", "cookies", "disclaimer"] as const;
 export type InfoPageKey = (typeof infoPageKeys)[number];
 
-export type PageKey = "home" | StylePageKey | InfoPageKey;
+/** "blog" is the blog index; posts have their own registry in ./blog-routes. */
+export type PageKey = "home" | "blog" | StylePageKey | InfoPageKey;
+type SluggedKey = Exclude<PageKey, "home" | "blog">;
 
-export const slugs: Record<Exclude<PageKey, "home">, Record<Locale, string>> = {
+export const slugs: Record<SluggedKey, Record<Locale, string>> = {
   cursive: { es: "letras-cursivas", pt: "letras-cursivas", en: "cursive-text" },
   gothic: { es: "letras-goticas", pt: "letras-goticas", en: "gothic-text" },
   small: { es: "letras-pequenas", pt: "letras-pequenas", en: "small-text" },
@@ -48,12 +51,13 @@ export const slugs: Record<Exclude<PageKey, "home">, Record<Locale, string>> = {
   disclaimer: { es: "aviso-legal", pt: "aviso-legal", en: "disclaimer" },
 };
 
-export const allPageKeys: PageKey[] = ["home", ...stylePageKeys, ...infoPageKeys];
+export const allPageKeys: PageKey[] = ["home", "blog", ...stylePageKeys, ...infoPageKeys];
 
 /** Public path, e.g. pathFor("pt", "gothic") -> "/pt/letras-goticas". */
 export function pathFor(locale: Locale, key: PageKey): string {
   const prefix = locale === "es" ? "" : `/${locale}`;
   if (key === "home") return prefix || "/";
+  if (key === "blog") return `${prefix}/blog`;
   return `${prefix}/${slugs[key][locale]}`;
 }
 
@@ -67,9 +71,9 @@ export function absoluteUrl(path: string): string {
 }
 
 /** Reverse lookup: slug within a locale -> page key. */
-export function keyFromSlug(locale: Locale, slug: string): Exclude<PageKey, "home"> | null {
+export function keyFromSlug(locale: Locale, slug: string): SluggedKey | null {
   for (const [key, bySlug] of Object.entries(slugs)) {
-    if (bySlug[locale] === slug) return key as Exclude<PageKey, "home">;
+    if (bySlug[locale] === slug) return key as SluggedKey;
   }
   return null;
 }
@@ -85,8 +89,11 @@ export function publicPath(pathname: string): string {
   return pathname;
 }
 
-/** Parse a public pathname into locale + page key (null key = unknown page). */
-export function parsePath(pathname: string): { locale: Locale; key: PageKey | null } {
+/**
+ * Parse a public pathname into locale + page key (null key = unknown page).
+ * Blog posts return key null plus their postId.
+ */
+export function parsePath(pathname: string): { locale: Locale; key: PageKey | null; postId?: BlogPostId } {
   const parts = publicPath(pathname).split("/").filter(Boolean);
   let locale: Locale = "es";
   if (parts[0] === "pt" || parts[0] === "en") {
@@ -94,6 +101,11 @@ export function parsePath(pathname: string): { locale: Locale; key: PageKey | nu
     parts.shift();
   }
   if (parts.length === 0) return { locale, key: "home" };
+  if (parts[0] === "blog") {
+    if (parts.length === 1) return { locale, key: "blog" };
+    const postId = parts.length === 2 ? postIdFromSlug(locale, parts[1]) : null;
+    return postId ? { locale, key: null, postId } : { locale, key: null };
+  }
   if (parts.length > 1) return { locale, key: null };
   return { locale, key: keyFromSlug(locale, parts[0]) };
 }

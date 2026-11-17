@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { Globe } from "lucide-react";
 import { locales, siteConfig, type Locale } from "@/lib/site-config";
 import { parsePath, pathFor } from "@/lib/routes";
+import { blogPostPath } from "@/lib/blog-routes";
 
 /**
  * Links to the SAME page in the other languages (not just their homepages).
@@ -12,10 +13,11 @@ import { parsePath, pathFor } from "@/lib/routes";
  */
 export function useAlternateLinks() {
   const pathname = usePathname() ?? "/";
-  const { locale: current, key } = parsePath(pathname);
+  const { locale: current, key, postId } = parsePath(pathname);
   return locales.map((l) => ({
     locale: l,
-    href: pathFor(l, key ?? "home"),
+    // A post not published in that language falls back to its blog index.
+    href: postId ? (blogPostPath(l, postId) ?? pathFor(l, "blog")) : pathFor(l, key ?? "home"),
     current: l === current,
   }));
 }
