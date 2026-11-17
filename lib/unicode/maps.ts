@@ -198,3 +198,15 @@ export const accented = fromCodePoints(
   0x00e4, 0x0180, 0x00e7, 0x010f, 0x00eb, 0x0192, 0x011f, 0x0125, 0x00ef, 0x0135, 0x0137, 0x013e, 0x1e41,
   0x00f1, 0x00f6, 0x1e57, 0x02a0, 0x0159, 0x0161, 0x0165, 0x00fc, 0x1e7d, 0x0175, 0x1e8d, 0x00ff, 0x017e,
 );
+
+/** Thai letters that resemble Latin ones ("Thai scribble" look). */
+export const thai = caseless("ค๒ς๔єŦﻮђเןкɭ๓ภ๏קợгรՇยשฬאץչ");
+
+/** Armenian and IPA look-alikes ("fairy" look). */
+export const fairy = caseless("ǟɮƈɖɛʄɢɦɨʝӄʟʍռօքզʀֆȶʊʋաӼʏʐ");
+
+/** Lowercase Cyrillic look-alikes (а в с ԁ е …), mixed with Latin where none exists. */
+export const cyrillicLower = caseless("авсԁеfɡніјкlмпорqгѕтцѵшхуz");
+
+/** Regional indicator symbols, U+1F1E6–U+1F1FF (shown as letter tiles; pairs can form flags). */
+export const regional = caseless([...UPPER].map((_, i) => String.fromCodePoint(0x1f1e6 + i)).join(""));

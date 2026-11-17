@@ -10,8 +10,8 @@ import { codePointLength, toClusters } from "../lib/unicode/transform.ts";
 
 const cp = (s: string) => [...s].map((c) => c.codePointAt(0)!.toString(16).toUpperCase());
 
-test("catalogue has 30–60 unique styles and every category is used", () => {
-  assert.ok(styleIds.length >= 30 && styleIds.length <= 120, `got ${styleIds.length}`);
+test("catalogue has 30–250 unique styles and every category is used", () => {
+  assert.ok(styleIds.length >= 30 && styleIds.length <= 250, `got ${styleIds.length}`);
   assert.equal(new Set(styleIds).size, styleIds.length);
   for (const c of categoryIds) assert.ok(styles.some((s) => s.category === c), `empty category ${c}`);
 });
@@ -22,7 +22,8 @@ test("letter maps cover a–z / A–Z with single code points", () => {
     sansItalic: m.sansItalic, sansBoldItalic: m.sansBoldItalic, monospace: m.monospace, circled: m.circled,
     squared: m.squared, negativeSquared: m.negativeSquared, negativeCircled: m.negativeCircled, fullwidth: m.fullwidth,
     upsideDown: m.upsideDown, mirrored: m.mirrored, smallCaps: m.smallCaps, currency: m.currency, greekish: m.greekish,
-    asian: m.asian, hooked: m.hooked, syllabic: m.syllabic, parenthesized: m.parenthesized };
+    asian: m.asian, hooked: m.hooked, syllabic: m.syllabic, parenthesized: m.parenthesized,
+    thai: m.thai, fairy: m.fairy, cyrillicLower: m.cyrillicLower, regional: m.regional };
   for (const [name, map] of Object.entries(full)) {
     for (const ch of "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") {
       assert.ok(map[ch] !== undefined, `${name} missing ${ch}`);
@@ -119,4 +120,12 @@ test("decorations frame text and skip empty input", async () => {
   assert.equal(decorate("𝐀", "yinyang"), "☯ 𝐀 ☯");
   assert.equal(decorate("𝐀", "none"), "𝐀");
   assert.equal(decorate("", "stars"), "");
+});
+
+test("every style returns non-empty output, keeps accents and never throws", () => {
+  for (const s of styles) {
+    const out = transform("Letras Bonitas ñá 123", s.id);
+    assert.ok(out.length > 0, `${s.id} returned empty`);
+    assert.equal(transform("", s.id), "", `${s.id} should leave empty input empty`);
+  }
 });

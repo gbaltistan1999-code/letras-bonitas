@@ -15,7 +15,7 @@ const info: InfoPages = {
         blocks: [
           {
             type: "p",
-            text: "Reunimos en un solo lugar más de 80 estilos de texto basados en caracteres Unicode, explicados en español, portugués e inglés. Los estilos y plataformas principales tienen su propia página con ejemplos, instrucciones y limitaciones reales, para que sepas qué esperar antes de pegar el texto en tu perfil.",
+            text: "Reunimos en un solo lugar más de 200 estilos de texto basados en caracteres Unicode, explicados en español, portugués e inglés. Los estilos y plataformas principales tienen su propia página con ejemplos, instrucciones y limitaciones reales, para que sepas qué esperar antes de pegar el texto en tu perfil.",
           },
         ],
       },

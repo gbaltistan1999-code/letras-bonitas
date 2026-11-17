@@ -15,7 +15,7 @@ const info: InfoPages = {
         blocks: [
           {
             type: "p",
-            text: "We bring together more than 80 Unicode text styles, explained in Spanish, Portuguese and English. The main styles and platforms each have their own page with examples, instructions and real limitations, so you know what to expect before pasting into your profile.",
+            text: "We bring together more than 200 Unicode text styles, explained in Spanish, Portuguese and English. The main styles and platforms each have their own page with examples, instructions and real limitations, so you know what to expect before pasting into your profile.",
           },
         ],
       },
