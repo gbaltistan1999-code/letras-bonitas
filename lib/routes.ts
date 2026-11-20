@@ -17,10 +17,28 @@ export const stylePageKeys = [
   "tiktok",
   "whatsapp",
   "discord",
+  "bold",
+  "italic",
+  "bubble",
+  "square",
+  "underline",
+  "upsideDown",
+  "weird",
+  "symbols",
+  "aesthetic",
+  "gamer",
+  "kaomoji",
 ] as const;
 export type StylePageKey = (typeof stylePageKeys)[number];
+/** Pages from the second keyword batch; their content lives in data/<locale>/styles-extra.ts. */
+export type ExtraStylePageKey =
+  | "bold" | "italic" | "bubble" | "square" | "underline" | "upsideDown"
+  | "weird" | "symbols" | "aesthetic" | "gamer" | "kaomoji";
 
-export const letterStyleKeys: StylePageKey[] = ["cursive", "gothic", "small", "strike"];
+export const letterStyleKeys: StylePageKey[] = [
+  "cursive", "gothic", "bold", "italic", "small", "bubble", "square", "strike", "underline",
+  "upsideDown", "weird", "symbols", "aesthetic", "gamer", "kaomoji",
+];
 export const platformKeys: StylePageKey[] = ["nick", "freefire", "instagram", "tiktok", "whatsapp", "discord"];
 
 export const infoPageKeys = ["about", "author", "contact", "faq", "privacy", "terms", "cookies", "disclaimer"] as const;
@@ -41,6 +59,18 @@ export const slugs: Record<SluggedKey, Record<Locale, string>> = {
   whatsapp: { es: "letras-para-whatsapp", pt: "letras-para-whatsapp", en: "whatsapp-fonts" },
   discord: { es: "letras-para-discord", pt: "letras-para-discord", en: "discord-fonts" },
   nick: { es: "letras-para-nick", pt: "nick-bonito", en: "nickname-fonts" },
+  bold: { es: "letras-en-negrita", pt: "letras-em-negrito", en: "bold-text" },
+  italic: { es: "letras-en-italica", pt: "letras-em-italico", en: "italic-text" },
+  bubble: { es: "letras-en-burbuja", pt: "letras-em-bolha", en: "bubble-text" },
+  square: { es: "letras-cuadradas", pt: "letras-quadradas", en: "square-text" },
+  underline: { es: "letras-subrayadas", pt: "letras-sublinhadas", en: "underline-text" },
+  upsideDown: { es: "letras-al-reves", pt: "letras-de-cabeca-para-baixo", en: "upside-down-text" },
+  // pt: "letras diferentes" is the Portuguese homepage keyword, so this page targets "letras estranhas".
+  weird: { es: "letras-raras", pt: "letras-estranhas", en: "weird-text" },
+  symbols: { es: "letras-con-simbolos", pt: "letras-com-simbolos", en: "symbol-fonts" },
+  aesthetic: { es: "letras-aesthetic", pt: "letras-aesthetic", en: "aesthetic-fonts" },
+  gamer: { es: "letras-gamer", pt: "letras-gamer", en: "gamer-fonts" },
+  kaomoji: { es: "kaomoji", pt: "kaomoji", en: "kaomoji" },
   about: { es: "sobre-nosotros", pt: "sobre-nos", en: "about" },
   author: { es: "autor", pt: "autor", en: "author" },
   contact: { es: "contacto", pt: "contato", en: "contact" },

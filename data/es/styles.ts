@@ -1,7 +1,9 @@
 import type { StylePageContent } from "@/types/content";
 import type { StylePageKey } from "@/lib/routes";
+import extraPages from "./styles-extra";
 
 const pages: Record<StylePageKey, StylePageContent> = {
+  ...extraPages,
   cursive: {
     metaTitle: "Letras Cursivas para Copiar y Pegar 𝓒𝓾𝓻𝓼𝓲𝓿𝓪 | LetrasHub",
     metaDescription:

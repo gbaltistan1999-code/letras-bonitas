@@ -1,7 +1,9 @@
 import type { StylePageContent } from "@/types/content";
 import type { StylePageKey } from "@/lib/routes";
+import extraPages from "./styles-extra";
 
 const pages: Record<StylePageKey, StylePageContent> = {
+  ...extraPages,
   cursive: {
     metaTitle: "Cursive Text Generator: Cursive Fonts Copy and Paste 𝓒𝓾𝓻𝓼𝓲𝓿𝓮 | LetrasHub",
     metaDescription:

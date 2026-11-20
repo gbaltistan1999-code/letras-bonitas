@@ -103,10 +103,10 @@ export function Header({ homeHref, labels, letterStyles, platforms, links }: Hea
             <div
               id={stylesId}
               hidden={!stylesOpen}
-              className="absolute left-1/2 top-full mt-2 w-[30rem] -translate-x-1/2 rounded-2xl border border-line bg-page p-4 shadow-lg"
+              className="absolute left-1/2 top-full mt-2 w-[42rem] -translate-x-1/2 rounded-2xl border border-line bg-page p-4 shadow-lg"
             >
-              <div className="grid grid-cols-2 gap-4">
-                <MenuGroup title={labels.letterStyles} items={letterStyles} isActive={isActive} />
+              <div className="grid grid-cols-[2fr_1fr] gap-4">
+                <MenuGroup title={labels.letterStyles} items={letterStyles} isActive={isActive} columns />
                 <MenuGroup title={labels.platforms} items={platforms} isActive={isActive} />
               </div>
             </div>
@@ -170,16 +170,19 @@ function MenuGroup({
   items,
   isActive,
   large,
+  columns,
 }: {
   title: string;
   items: NavLink[];
   isActive: (href: string) => boolean;
   large?: boolean;
+  /** Two columns in the desktop dropdown (long lists). */
+  columns?: boolean;
 }) {
   return (
     <div>
       <p className="px-3 text-xs font-semibold uppercase tracking-wide text-muted">{title}</p>
-      <ul className={`mt-2 ${large ? "grid grid-cols-2 gap-1" : "space-y-0.5"}`}>
+      <ul className={`mt-2 ${large ? "grid grid-cols-2 gap-1" : columns ? "grid grid-cols-2 gap-x-2 gap-y-0.5" : "space-y-0.5"}`}>
         {items.map((item) => (
           <li key={item.href}>
             <Link

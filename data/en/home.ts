@@ -103,6 +103,17 @@ const home: HomeContent = {
   platformsIntro:
     "Fonts ready for your profile: each page explains which styles the app accepts, where to paste them and what the limits are.",
   teasers: {
+    bold: "Bold letters for bios, headings and apps without formatting.",
+    italic: "Elegant slanted text for quotes and bios.",
+    bubble: "Letters inside white and black circles.",
+    square: "Letters in squares, boxes and blocks.",
+    underline: "Single, double, wavy and dotted underlines.",
+    upsideDown: "Upside-down, mirrored and reversed text.",
+    weird: "Unusual alphabets: Asian-style, runes, currency and glitch.",
+    symbols: "Frames, stars and ornaments ꧁★彡 to copy.",
+    aesthetic: "Cute text with sparkles, flowers and bows.",
+    gamer: "Rifles, swords, skulls and crowns for gamertags.",
+    kaomoji: "Japanese text faces like (◕‿◕) and ʕ•ᴥ•ʔ.",
     cursive: "Handwriting-style letters for bios and names.",
     gothic: "Old-English blackletter for bold nicknames.",
     small: "Tiny text: small caps, superscript and subscript.",

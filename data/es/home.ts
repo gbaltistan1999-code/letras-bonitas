@@ -107,6 +107,17 @@ const home: HomeContent = {
   platformsIntro:
     "Letras listas para tu perfil: cada página explica qué estilos acepta la app, dónde pegarlos y qué límites tiene.",
   teasers: {
+    bold: "Negrita para bios, títulos y apps sin formato.",
+    italic: "Texto inclinado y elegante para citas y bios.",
+    bubble: "Letras dentro de círculos blancos y negros.",
+    square: "Letras en cuadros, cajas y bloques.",
+    underline: "Subrayado simple, doble, ondulado y con puntos.",
+    upsideDown: "Texto boca abajo, en espejo e invertido.",
+    weird: "Alfabetos curiosos: asiático, runas, monedas y glitch.",
+    symbols: "Marcos, estrellas y adornos ꧁★彡 para copiar.",
+    aesthetic: "Letras tiernas con brillos, flores y lazos.",
+    gamer: "Rifles, espadas, calaveras y coronas para nicks.",
+    kaomoji: "Caritas japonesas como (◕‿◕) y ʕ•ᴥ•ʔ.",
     cursive: "Letras manuscritas y elegantes para biografías y nombres.",
     gothic: "Estilo medieval, perfecto para nicks con carácter.",
     small: "Letras pequeñas, versalitas y superíndice.",
