@@ -1,6 +1,6 @@
 import type { Locale } from "@/lib/site-config";
 import { siteConfig } from "@/lib/site-config";
-import { letterStyleKeys, pathFor, platformKeys } from "@/lib/routes";
+import { FREE_FIRE_NAMES_PATH, letterStyleKeys, pathFor, platformKeys } from "@/lib/routes";
 import { getDictionary, pageLabel } from "@/lib/i18n";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
@@ -27,7 +27,12 @@ export function SiteChrome({ locale, children }: { locale: Locale; children: Rea
           homeHref={pathFor(locale, "home")}
           labels={dict.nav}
           letterStyles={letterStyleKeys.map(toLink)}
-          platforms={platformKeys.map(toLink)}
+          platforms={platformKeys.flatMap((k) =>
+            // Spanish-only page listed right after "Letras para Free Fire".
+            k === "freefire" && locale === "es"
+              ? [toLink(k), { href: FREE_FIRE_NAMES_PATH, label: "Nombres para Free Fire" }]
+              : [toLink(k)],
+          )}
           links={[toLink("blog"), toLink("about"), toLink("faq")]}
         />
         <main id="main" className="flex-1">

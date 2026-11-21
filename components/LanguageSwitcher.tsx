@@ -13,11 +13,18 @@ import { blogPostPath } from "@/lib/blog-routes";
  */
 export function useAlternateLinks() {
   const pathname = usePathname() ?? "/";
-  const { locale: current, key, postId } = parsePath(pathname);
+  const { locale: current, key, postId, spanishOnly } = parsePath(pathname);
   return locales.map((l) => ({
     locale: l,
-    // A post not published in that language falls back to its blog index.
-    href: postId ? (blogPostPath(l, postId) ?? pathFor(l, "blog")) : pathFor(l, key ?? "home"),
+    // A post not published in that language falls back to its blog index;
+    // a Spanish-only page falls back to its closest page in that language.
+    href: spanishOnly
+      ? l === "es"
+        ? spanishOnly.path
+        : pathFor(l, spanishOnly.fallback)
+      : postId
+        ? (blogPostPath(l, postId) ?? pathFor(l, "blog"))
+        : pathFor(l, key ?? "home"),
     current: l === current,
   }));
 }

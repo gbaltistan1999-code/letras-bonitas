@@ -394,6 +394,10 @@ const pages: Record<StylePageKey, StylePageContent> = {
             type: "note",
             text: "No uses nicks para hacerte pasar por otra persona, por un administrador o por una marca: va contra las normas de casi todas las plataformas y contra nuestros términos de uso.",
           },
+          {
+            type: "p",
+            text: "Si juegas Free Fire y buscas inspiración, mira nuestra lista de [nombres para Free Fire](/nombres-para-free-fire) por estilos: hombre, mujer, clan, parejas y más.",
+          },
         ],
       },
       {
@@ -473,6 +477,10 @@ const pages: Record<StylePageKey, StylePageContent> = {
               "Que el nick se entienda: tus amigos deben poder encontrarte para agregarte.",
               "Que no imite el nombre de otro jugador conocido, de un creador o del equipo oficial.",
             ],
+          },
+          {
+            type: "note",
+            text: "¿Prefieres un nombre ya hecho? Tenemos más de 400 [nombres para Free Fire](/nombres-para-free-fire) listos para copiar, con contador de caracteres.",
           },
           {
             type: "p",

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Fragment } from "react";
 import type { Locale } from "@/lib/site-config";
-import { allPageKeys, pathFor, type PageKey } from "@/lib/routes";
+import { allPageKeys, pathFor, SINGLE_LANGUAGE_PATHS, type PageKey } from "@/lib/routes";
+import { blogPostPath, type BlogPostId } from "@/lib/blog-routes";
 
 const LINK = /\[([^\]]+)\]\(([^)\s]+)\)/g;
 
@@ -21,6 +22,23 @@ export function RichText({ text, locale }: { text: string; locale: Locale }) {
         <a key={index} href={target} target="_blank" rel="noopener noreferrer">
           {anchor}
         </a>,
+      );
+    } else if (target.startsWith("blog:")) {
+      // [anchor](blog:postId) → that post in the current language.
+      const href = blogPostPath(locale, target.slice(5) as BlogPostId);
+      if (!href) throw new Error(`RichText: blog post "${target}" not published in "${locale}"`);
+      parts.push(
+        <Link key={index} href={href}>
+          {anchor}
+        </Link>,
+      );
+    } else if (target.startsWith("/")) {
+      // [anchor](/path) → single-language pages outside the page registry.
+      if (!SINGLE_LANGUAGE_PATHS.includes(target)) throw new Error(`RichText: unknown internal path "${target}"`);
+      parts.push(
+        <Link key={index} href={target}>
+          {anchor}
+        </Link>,
       );
     } else {
       if (!allPageKeys.includes(target as PageKey)) throw new Error(`RichText: unknown page key "${target}" in "${text}"`);

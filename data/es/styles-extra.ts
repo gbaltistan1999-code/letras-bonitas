@@ -738,7 +738,7 @@ const pages: Record<ExtraStylePageKey, StylePageContent> = {
           {
             type: "ul",
             items: [
-              "Tu nick dentro del juego (si lo permite): consejos en [letras para nick](nick) y [Free Fire](freefire).",
+              "Tu nick dentro del juego (si lo permite): consejos en [letras para nick](nick) y [Free Fire](freefire), o elige uno de nuestros [nombres para Free Fire](/nombres-para-free-fire).",
               "Nombre y apodos de servidor en [Discord](discord).",
               "Títulos de directos y vídeos, descripciones de canal y paneles.",
               "Nombre de clan o gremio: todos con el mismo símbolo y su nombre.",

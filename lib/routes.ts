@@ -81,6 +81,16 @@ export const slugs: Record<SluggedKey, Record<Locale, string>> = {
   disclaimer: { es: "aviso-legal", pt: "aviso-legal", en: "disclaimer" },
 };
 
+/**
+ * Spanish-only pages that live outside the page registry (no pt/en version).
+ * Each maps to the registry page the language switcher offers in other languages.
+ */
+export const FREE_FIRE_NAMES_PATH = "/nombres-para-free-fire";
+export const spanishOnlyPages: Record<string, PageKey> = {
+  [FREE_FIRE_NAMES_PATH]: "freefire",
+};
+export const SINGLE_LANGUAGE_PATHS = Object.keys(spanishOnlyPages);
+
 export const allPageKeys: PageKey[] = ["home", "blog", ...stylePageKeys, ...infoPageKeys];
 
 /** Public path, e.g. pathFor("pt", "gothic") -> "/pt/letras-goticas". */
@@ -123,8 +133,16 @@ export function publicPath(pathname: string): string {
  * Parse a public pathname into locale + page key (null key = unknown page).
  * Blog posts return key null plus their postId.
  */
-export function parsePath(pathname: string): { locale: Locale; key: PageKey | null; postId?: BlogPostId } {
-  const parts = publicPath(pathname).split("/").filter(Boolean);
+export function parsePath(pathname: string): {
+  locale: Locale;
+  key: PageKey | null;
+  postId?: BlogPostId;
+  /** Spanish-only page: its public path, and the page to offer in other languages. */
+  spanishOnly?: { path: string; fallback: PageKey };
+} {
+  const clean = publicPath(pathname);
+  if (spanishOnlyPages[clean]) return { locale: "es", key: null, spanishOnly: { path: clean, fallback: spanishOnlyPages[clean] } };
+  const parts = clean.split("/").filter(Boolean);
   let locale: Locale = "es";
   if (parts[0] === "pt" || parts[0] === "en") {
     locale = parts[0];
