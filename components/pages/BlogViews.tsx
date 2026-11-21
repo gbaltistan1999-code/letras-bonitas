@@ -13,6 +13,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContentSections } from "@/components/ContentSections";
 import { Faqs } from "@/components/Faqs";
 import { JsonLd } from "@/components/JsonLd";
+import { RichText } from "@/components/RichText";
 
 /** Posts published in this language, newest first; ties keep registry order. */
 function sortedIds(locale: Locale): BlogPostId[] {
@@ -184,7 +185,9 @@ export function BlogPostView({ locale, slug }: { locale: Locale; slug: string })
             className="mt-6 w-full rounded-2xl border border-line shadow-sm"
           />
         ) : null}
-        <p className="mt-6 text-lg leading-8 text-ink-soft">{p.intro}</p>
+        <p className="prose-lh mt-6 text-lg leading-8 text-ink-soft">
+          <RichText text={p.intro} locale={locale} />
+        </p>
 
         <div className="mt-10">
           <ContentSections sections={p.sections} locale={locale} dict={dict} />

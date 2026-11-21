@@ -9,10 +9,13 @@
  */
 import { locales, type Locale } from "./site-config";
 
-export const blogPostIds = ["christmas", "instagramBio", "squareBoxes", "freeFireNick"] as const;
+export const blogPostIds = ["newYear2027", "christmas", "instagramBio", "squareBoxes", "freeFireNick"] as const;
 export type BlogPostId = (typeof blogPostIds)[number];
 
 export const blogSlugs: Record<BlogPostId, Partial<Record<Locale, string>>> = {
+  newYear2027: {
+    es: "feliz-ano-nuevo-2027-letras-bonitas",
+  },
   christmas: {
     es: "feliz-navidad-letras-bonitas",
   },

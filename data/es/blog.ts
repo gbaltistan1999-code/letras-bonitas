@@ -1,6 +1,276 @@
 import type { BlogPosts } from "@/types/content";
 
 const posts: BlogPosts = {
+  newYear2027: {
+    metaTitle: "Feliz Año Nuevo 2027 con Letras Bonitas: Frases y Símbolos para Copiar | LetrasHub",
+    metaDescription:
+      "\"Feliz Año Nuevo 2027\" en letras bonitas, frases cortas decoradas, símbolos y nombres de perfil listos para copiar y pegar en WhatsApp, Instagram, Facebook y TikTok.",
+    title: "Feliz Año Nuevo 2027 con letras bonitas: frases y símbolos para copiar",
+    excerpt:
+      "\"Feliz Año Nuevo 2027\" en letras bonitas, frases cortas, mensajes para familia, pareja y amigos, símbolos de fiesta y nombres de perfil listos para copiar.",
+    published: "2026-11-21",
+    readMinutes: 6,
+    intro:
+      "Se acaba el año y llega el momento de felicitar a todos. En esta guía tienes \"Feliz Año Nuevo 2027\" escrito en letras bonitas, frases cortas decoradas, mensajes para tu familia, tu pareja y tus amigos, símbolos de fiesta y nombres de perfil con estilo. Todo está listo para copiar y pegar en WhatsApp, Instagram, Facebook y TikTok. ¿Todavía estás con las felicitaciones de diciembre? Mira también nuestra guía de [Feliz Navidad con letras bonitas](blog:christmas).",
+    sections: [
+      {
+        heading: "\"Feliz Año Nuevo 2027\" en letras bonitas",
+        blocks: [
+          { type: "p", text: "Toca el estilo que más te guste, cópialo y pégalo donde quieras:" },
+          {
+            type: "copy",
+            items: [
+              { label: "Cursiva elegante", text: "𝓕𝓮𝓵𝓲𝔃 𝓐𝓷̃𝓸 𝓝𝓾𝓮𝓿𝓸 2027" },
+              { label: "Gótica", text: "𝕱𝖊𝖑𝖎𝖟 𝕬𝖓̃𝖔 𝕹𝖚𝖊𝖛𝖔 2027" },
+              { label: "Negrita", text: "𝐅𝐞𝐥𝐢𝐳 𝐀𝐧̃𝐨 𝐍𝐮𝐞𝐯𝐨 𝟐𝟎𝟐𝟕" },
+              { label: "Negrita sin serifa", text: "𝗙𝗲𝗹𝗶𝘇 𝗔𝗻̃𝗼 𝗡𝘂𝗲𝘃𝗼 𝟮𝟬𝟮𝟳" },
+              { label: "Doble trazo", text: "𝔽𝕖𝕝𝕚𝕫 𝔸𝕟̃𝕠 ℕ𝕦𝕖𝕧𝕠 𝟚𝟘𝟚𝟟" },
+              { label: "Máquina de escribir", text: "𝙵𝚎𝚕𝚒𝚣 𝙰𝚗̃𝚘 𝙽𝚞𝚎𝚟𝚘 𝟸𝟶𝟸𝟽" },
+              { label: "Pequeñas", text: "ꜰᴇʟɪᴢ ᴀɴ̃ᴏ ɴᴜᴇᴠᴏ 2027" },
+              { label: "Burbujas", text: "Ⓕⓔⓛⓘⓩ Ⓐⓝ̃ⓞ Ⓝⓤⓔⓥⓞ ②⓪②⑦" },
+              { label: "Ancho completo", text: "Ｆｅｌｉｚ Ａñｏ Ｎｕｅｖｏ ２０２７" },
+              { label: "Mayúsculas espaciadas", text: "F E L I Z   A Ñ O   N U E V O   2 0 2 7" },
+            ],
+          },
+          {
+            type: "note",
+            text: "💡 ¿Por qué la ñ se ve un poco distinta? Las letras decoradas Unicode no tienen una «ñ» propia, así que la creamos con una n más una tilde combinada (n + ◌̃). En casi todos los móviles se ve perfecta. Si en algún dispositivo ves un cuadrito, usa la versión en letras normales o la de mayúsculas espaciadas.",
+          },
+          {
+            type: "p",
+            text: "¿Quieres escribir tu propio mensaje con estos estilos? Usa nuestro [generador de letras bonitas](home).",
+          },
+        ],
+      },
+      {
+        heading: "Feliz Año Nuevo con marcos y símbolos",
+        blocks: [
+          {
+            type: "copy",
+            items: [
+              "꧁ Feliz Año Nuevo 2027 ꧂",
+              "✨🎆 ¡Feliz 2027! 🎆✨",
+              "★彡 Feliz Año Nuevo 彡★",
+              "🥂 ˚₊‧ Feliz 2027 ‧₊˚ 🥂",
+              "╰┈➤ Bienvenido 2027 🎉",
+              "⋆｡°✩ Feliz Año Nuevo ✩°｡⋆",
+              "『 Hola 2027 』✨",
+              "🎇──── Feliz 2027 ────🎇",
+              "꧁༺ 𝓕𝓮𝓵𝓲𝔃 2027 ༻꧂",
+              "✧･ﾟ: *✧ Año Nuevo ✧*:･ﾟ✧",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Frases cortas de Año Nuevo para copiar",
+        blocks: [
+          {
+            type: "copy",
+            items: [
+              "✨ Nuevo año, nuevas metas, las mismas ganas de brillar.",
+              "🥂 Brindo por un 2027 lleno de cosas buenas.",
+              "🎆 Que este año nos traiga todo lo que soñamos.",
+              "⏳ 3… 2… 1… ¡Feliz 2027! 🎉",
+              "🌟 Cerrando ciclos, abriendo puertas.",
+              "💫 365 nuevas oportunidades empiezan hoy.",
+              "🍾 Adiós 2026, gracias por todo. Hola 2027.",
+              "✨ Este año va a ser nuestro.",
+              "🎇 Que la alegría de esta noche dure todo el año.",
+              "🕛 A las doce, un deseo: que seas feliz.",
+              "🌙 Lo mejor está por venir. Feliz Año Nuevo.",
+              "🎉 Menos drama, más fiesta. ¡Feliz 2027!",
+              "💛 Gracias por estar en mi 2026. Te quiero en mi 2027.",
+              "✨ Página 1 de 365. Que sea una gran historia.",
+              "🥂 Salud por los que están y por lo que viene.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Frases de Año Nuevo para WhatsApp",
+        blocks: [
+          { type: "p", text: "Son perfectas para tu estado o para enviar a tus contactos a medianoche:" },
+          {
+            type: "copy",
+            items: [
+              "꧁ 🎆 ¡Feliz Año Nuevo 2027! Que este año te trate bonito. 🎆 ꧂",
+              "✨ Te deseo un 2027 lleno de salud, amor y mucha suerte. ✨",
+              "🥂 Que se cumplan todos tus deseos este año. ¡Feliz 2027!",
+              "⏳ Faltan pocas horas para el 2027… ¡prepárate para lo mejor! 🎉",
+              "🎇 Gracias por un año más de amistad. ¡Feliz Año Nuevo!",
+              "💫 Nuevo año, misma familia, más unidos que nunca. ❤️",
+            ],
+          },
+          { type: "p", text: "Para darle más estilo a tu nombre o tu estado, visita [letras para WhatsApp](whatsapp)." },
+        ],
+      },
+      {
+        heading: "Frases de Año Nuevo para Instagram",
+        blocks: [
+          { type: "p", text: "Úsalas como pie de foto, en tus historias o en tu biografía:" },
+          {
+            type: "copy",
+            items: [
+              "𝓗𝓸𝓵𝓪 2027 ✨",
+              "New year, same vibe ✧",
+              "2027: 𝐦𝐨𝐝𝐨 𝐛𝐫𝐢𝐥𝐥𝐚𝐫 𝐚𝐜𝐭𝐢𝐯𝐚𝐝𝐨 💫",
+              "✨ Capítulo nuevo, misma protagonista ✨",
+              "🥂 Cheers al 2027",
+              "⋆｡° Lo que viene es mejor °｡⋆",
+              "꧁ 2027 ꧂ era de cosas bonitas",
+              "🎆 Última foto del 2026 📸",
+            ],
+          },
+          {
+            type: "p",
+            text: "¿No sabes cómo ponerlas en tu perfil? Lee [cómo poner letras bonitas en tu biografía de Instagram](blog:instagramBio).",
+          },
+        ],
+      },
+      {
+        heading: "Mensajes de Año Nuevo para la familia",
+        blocks: [
+          {
+            type: "copy",
+            items: [
+              "❤️ Gracias, familia, por estar siempre. ¡Feliz Año Nuevo 2027!",
+              "🏠 Que en este 2027 nunca nos falte salud, unión y amor.",
+              "✨ Lo mejor de cada año es poder celebrarlo con ustedes.",
+              "🥂 Mamá, papá: gracias por todo. ¡Feliz 2027!",
+              "🎆 Que este año la mesa siga llena y los corazones también.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Mensajes de Año Nuevo para tu pareja",
+        blocks: [
+          {
+            type: "copy",
+            items: [
+              "💕 Quiero empezar el 2027 igual que terminé el 2026: contigo.",
+              "✨ Mi deseo para este año ya se cumplió: eres tú.",
+              "🥂 Un año más a tu lado. Feliz 2027, amor.",
+              "❥ 365 días más para quererte. ¡Feliz Año Nuevo!",
+              "🌙 Que el beso de medianoche sea el primero de muchos este año.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Mensajes de Año Nuevo para amigos",
+        blocks: [
+          {
+            type: "copy",
+            items: [
+              "🎉 Gracias por las risas del 2026. ¡Vamos por más en 2027!",
+              "✨ Que este año tengamos más planes y menos excusas.",
+              "🥂 Por los amigos que se vuelven familia. ¡Feliz Año Nuevo!",
+              "😎 2027 nos espera, y esta vez sí vamos a cumplir los propósitos (o no 😂).",
+              "🎆 Feliz año a mi persona favorita para salir de fiesta.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Nombres de perfil para Año Nuevo",
+        blocks: [
+          {
+            type: "p",
+            text: "Pon tu nombre en lugar de Ana y cámbialo en WhatsApp, Instagram, Facebook o TikTok durante las fiestas:",
+          },
+          {
+            type: "copy",
+            items: [
+              "✨Ana 2027✨",
+              "🎆 Ana 🎆",
+              "꧁Ana 2027꧂",
+              "🥂 Ana ˚₊‧",
+              "★彡Ana彡★ 2027",
+              "Ana ✧ New Year",
+              "🎉 Ana | 2027",
+              "⋆｡°✩ Ana ✩°｡⋆",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Símbolos de Año Nuevo para copiar",
+        blocks: [
+          {
+            type: "copy",
+            items: [
+              { label: "Emojis de fiesta", text: "🎆 🎇 ✨ 🥂 🍾 🎉 🎊 🎈 ⏳ ⌛ 🕛 🌟 💫 🌙 ❤️ 🍇 🔔 🎁" },
+              { label: "Símbolos decorativos", text: "★ ☆ ✧ ✦ ✩ ✪ ⋆ ˚ ₊ ‧ ｡ ° ꧁ ꧂ ༺ ༻ 彡 『 』 ╰┈➤ ❥ ♡ ❄" },
+            ],
+          },
+          {
+            type: "note",
+            text: "🍇 Dato: en muchos países de habla hispana se comen 12 uvas con las 12 campanadas, una por cada mes, pidiendo un deseo con cada una. Pon 🍇 y 🔔 en tus mensajes y quedarán perfectos para esa noche.",
+          },
+          { type: "p", text: "Encuentra cientos de símbolos más en [letras con símbolos](symbols)." },
+        ],
+      },
+      {
+        heading: "Cómo copiar y pegar estas letras",
+        blocks: [
+          {
+            type: "ol",
+            items: [
+              "Toca «Copiar» en la frase o el estilo que quieras (o mantén pulsado el texto para seleccionarlo).",
+              "Abre WhatsApp, Instagram, Facebook o TikTok.",
+              "Pega el texto en tu estado, tu historia, tu biografía o tu mensaje.",
+            ],
+          },
+          {
+            type: "p",
+            text: "Si alguna letra aparece como un cuadrito vacío, no te preocupes: no es un error tuyo. Te explicamos por qué pasa en [por qué algunas letras se ven como cuadritos](blog:squareBoxes).",
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "¿Cómo escribo \"Feliz Año Nuevo\" con letras bonitas?",
+        a: "Copia uno de los estilos de esta página o escribe tu propio texto en el [generador de LetrasHub](home). Verás tu frase en más de 200 estilos para copiar.",
+      },
+      {
+        q: "¿Por qué la ñ no aparece igual en todas las letras?",
+        a: "Las letras decoradas Unicode no tienen ñ propia, así que se escribe con una n y una tilde encima. Se ve bien en casi todos los dispositivos, y si falla, usa letras normales para la ñ.",
+      },
+      {
+        q: "¿Estas letras funcionan en WhatsApp e Instagram?",
+        a: "Sí. Son caracteres Unicode, no fuentes, así que funcionan en WhatsApp, Instagram, Facebook, TikTok, X y la mayoría de apps de Android e iPhone.",
+      },
+      {
+        q: "¿Puedo poner letras bonitas en mi nombre de perfil?",
+        a: "Sí. Copia uno de los nombres de la sección «Nombres de perfil para Año Nuevo», cambia el nombre de ejemplo por el tuyo y pégalo en los ajustes de tu perfil.",
+      },
+      {
+        q: "¿Cuál es la frase más corta para felicitar el Año Nuevo?",
+        a: "«¡Feliz 2027! ✨» es corta, se entiende en todas partes y queda bien en cualquier estilo de letra.",
+      },
+    ],
+    outro: {
+      heading: "Sigue celebrando con letras bonitas",
+      blocks: [
+        {
+          type: "ul",
+          items: [
+            "[Feliz Navidad con letras bonitas](blog:christmas)",
+            "[Letras cursivas](cursive)",
+            "[Letras góticas](gothic)",
+            "[Letras aesthetic](aesthetic)",
+            "[Letras para WhatsApp](whatsapp)",
+            "[Letras para Instagram](instagram)",
+          ],
+        },
+        { type: "p", text: "¡Feliz Año Nuevo 2027 de parte de todo el equipo de LetrasHub! 🎆" },
+      ],
+    },
+    related: ["christmas", "instagramBio"],
+  },
   christmas: {
     metaTitle: "Feliz Navidad con Letras Bonitas 🎄 Copiar y Pegar (2026)",
     metaDescription:
