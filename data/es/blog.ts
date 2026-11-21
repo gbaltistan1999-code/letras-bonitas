@@ -10,6 +10,12 @@ const posts: BlogPosts = {
       "\"Feliz Año Nuevo 2027\" en letras bonitas, frases cortas, mensajes para familia, pareja y amigos, símbolos de fiesta y nombres de perfil listos para copiar.",
     published: "2026-11-21",
     readMinutes: 6,
+    image: {
+      src: "/blog/feliz-ano-nuevo-2027.jpg",
+      width: 1200,
+      height: 630,
+      alt: "Feliz Año Nuevo 2027 escrito en cuatro estilos de letras bonitas sobre un fondo morado y rosa con fuegos artificiales, un reloj a medianoche y copas de champán",
+    },
     intro:
       "Se acaba el año y llega el momento de felicitar a todos. En esta guía tienes \"Feliz Año Nuevo 2027\" escrito en letras bonitas, frases cortas decoradas, mensajes para tu familia, tu pareja y tus amigos, símbolos de fiesta y nombres de perfil con estilo. Todo está listo para copiar y pegar en WhatsApp, Instagram, Facebook y TikTok. ¿Todavía estás con las felicitaciones de diciembre? Mira también nuestra guía de [Feliz Navidad con letras bonitas](blog:christmas).",
     sections: [
